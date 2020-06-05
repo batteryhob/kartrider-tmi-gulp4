@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GULP 4.0 - EJS, SASS, IMAGE SPRITE</title>
+    <link rel="stylesheet" href="./css/main/main.css">
+    <link rel="stylesheet" href="./sprite/sprite.css">
+    <script>
+
+    </script>
+</head>
+<body>
+
+    <header>
+        Header
+    </header>
+
+    <nav>
+        <ul>
+            <% for(var i=0; i<5; i++) { %>
+                <li>
+                    <div>
+                        Navigation(EJS)
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </nav>
+
+    <main>
+        Main
+        <aside>
+            <ul>
+            <% for(var i=0; i<3; i++) { %>
+                <li>
+                    <div>
+                        Aside(EJS)
+                    </div>
+                </li>
+            <% } %>
+            </ul>
+        </aside>
+        <section>
+            <article>
+                <i class="icon icon-itmi"></i>
+                <i class="icon icon-inxflow"></i>
+                <i class="icon icon-imaple"></i>
+                <i class="icon icon-icv"></i>
+                <i class="icon icon-ijupyter"></i>
+                <br/>
+                Copyright Jeon Jiho.
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        Footer
+    </footer>
+
+</body>
+</html>

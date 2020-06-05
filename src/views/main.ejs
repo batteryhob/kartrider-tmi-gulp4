@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GULP 4.0 - EJS, SASS, IMAGE SPRITE</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/main/main.css">
+    <link rel="stylesheet" href="./css/sprite.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script>
+        var percentageComplete = 0.7;
+        var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+        var progressBar = $(".js-progress-bar");
+        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+    </script>
+    <style>
+        .svg-icon {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="contents">
+            <i class="fas fa-home"></i>
+            <div class="menu-center desktop">
+                <ul>
+                    <li class="active">
+                        검색
+                    </li>
+                    <li>
+                        랭킹
+                    </li>
+                    <li>
+                        카트
+                    </li>
+                    <li>
+                        트랙
+                    </li>
+                </ul>
+                <div class="underbar">
+                </div>
+            </div>
+            <div class="menu-right">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- <nav>
+        <ul>
+            <% for(var i=0; i<5; i++) { %>
+                <li>
+                    <div>
+                        Navigation(EJS)
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </nav> -->
+
+    <main>
+
+        <section>
+
+            <div class="search">
+
+                <div class="visual">
+
+                </div>
+                
+                <div class="searchbar">
+                    <form onsubmit="return false;">
+                        <div class="select">
+                            <label for="selectCategory">유저</label>
+                            <select id="selectCategory">
+                                <option value="유저">유저</option>
+                                <option value="카트">카트</option>
+                                <option value="트랙">트랙</option>
+                            </select>
+                        </div>
+                        <input type="search" placeholder="카트라이더 닉네임을 입력">
+                        <button class="btn">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+                
+            </div>
+
+
+        </section>
+
+    </main>
+
+    <footer>
+        개인정보취급방침
+    </footer>
+
+</body>
+</html>

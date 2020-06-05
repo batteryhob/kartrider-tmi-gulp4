@@ -1,0 +1,200 @@
+/* app.sass */
+@import '../common/_reset';
+@import '../common/_fonts';
+
+@import '../sprite/css/svg';
+
+$color-backgroundgray : #f7f7f7;
+$color-black : #000;
+$color-darkgray : #666666;
+$color-coolgray : #999999;
+$color-lightgray : #f6f6f6;
+$color-skyblue: #23b9ff;
+$color-yellow: #ffc95e;
+$color-pink: #fd446e;
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: $color-backgroundgray;
+  font-family: "Noto Sans KR";
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.mobile {
+  display: block;
+}
+
+.desktop {
+  display: none;
+}
+
+header {
+  min-width: 375px;
+  height: 60px;  
+  background-color: #fff;
+  .contents {    
+    position: relative;
+    line-height: 60px;
+    .menu-right {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+    }
+  }
+}
+
+main {
+  section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    min-width: 375px;
+    .visual {
+      margin: 0 auto;
+      max-width: 1280px;
+      text-align: center;
+    }
+    .searchbar {
+      position: relative;
+      margin: 0 auto;
+      max-width: 1280px;
+      text-align: center;
+      .form {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        transition: all 1s;
+        width: 110px;
+        -webkit-transition: width 0.5s; /* Safari */
+        transition: width 0.5s;
+        height: 67px;
+        background: transparent;
+        box-sizing: border-box;
+        border-radius: 33.5px;
+        border: 4px solid white;
+        padding: 5px;
+        .select {
+            position: absolute;  
+            top: 0px;
+            opacity: 0;
+            -webkit-transition: opacity 0.5s; /* Safari */
+            transition: opacity 0.5s;
+            label {                    
+                position: absolute;
+                display: block;
+                box-sizing: border-box;
+                top: 7px;
+                width: 100px;
+                height: 44px;
+                line-height: 44px;
+                font-weight: 400;
+                font-size: 16px;    
+                color: #000;
+                background: transparent;                    
+                z-index: -1;  /* IE8에서 label이 위치한 곳이 클릭되지 않는 것 해결 */
+                border-right: 1px solid #fff;                            
+                &:before {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    right: 15px;
+                    width: 0;
+                    height: 0;
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-top: 5px solid #fff;
+                }
+            }
+            select {
+                width: 100px;
+                height: 44px;
+                line-height: 44px;
+                font-weight: 500;
+                font-size: 14px; 
+                border: 0;
+                opacity: 0;  /* 숨기기 */
+                filter:alpha(opacity=0);  /* IE8 숨기기 */
+                -webkit-appearance: none; /* 네이티브 외형 감추기 */
+                -moz-appearance: none;
+                appearance: none;
+            }
+        }
+        input {
+            position: absolute;
+            top: 7px;
+            left: 105px;
+            width: 600px;
+            height: 44px;
+            line-height: 44px;
+            outline: 0;
+            border: 0;                        
+            display: block;
+            font-size: 24px;
+            font-weight: 400;
+            padding: 0 25px;
+            color: #000;
+            background: transparent;
+            opacity: 0;
+            -webkit-transition: opacity 0.5s; /* Safari */
+            transition: opacity 0.5s;
+            font-family: "Noto Sans KR";
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: #000;
+                opacity: 0.5; /* Firefox */
+            }
+            &:focus {
+                transition: 0.3s ease;
+    
+                &::-webkit-input-placeholder {
+                    transition: opacity 0.3s ease;
+                    opacity: 0;
+                }
+    
+                &::-moz-placeholder {
+                    transition: opacity 0.3s ease;
+                    opacity: 0;
+                }
+    
+                &:-ms-placeholder {
+                    transition: opacity 0.3s ease;
+                    opacity: 0;
+                }
+            }
+        }
+    
+        &.active {
+            width: 840px;
+            @media (max-width: 1630px) { 
+                width: 670px;
+            }
+            cursor: pointer;
+            .div_select{
+                opacity: 1;
+            }
+            input{
+                opacity: 1;
+            }
+        }
+    
+        .btn {
+            position: absolute;
+            width: 100px;
+            top: 7px;
+            right: 0px;
+            height: 44px;
+            line-height: 44px;
+            font-size: 24px;
+            font-weight: 400;
+            color: #000;
+            background-color: transparent;
+            border: none;
+        }
+      }
+    }
+  }  
+}
+
+@import './pc';

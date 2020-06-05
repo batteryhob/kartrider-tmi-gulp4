@@ -1,0 +1,72 @@
+/* app.sass */
+@media only screen  and (min-width : 769px) {
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  header {
+    padding-top: 6px;
+    min-width: 375px;
+    height: 60px;  
+    background-color: #fff;
+    .contents {    
+      position: relative;
+      line-height: 60px;
+      .menu-center{
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        font-size: 16px;
+        transform: translate(-50%, 0%);
+        ul{
+          display: flex;
+          li{
+            margin-left: 70px;
+            font-weight: 400;
+            cursor: pointer;
+            &:first-child{
+              margin-left: 0px;
+            }
+            &.active{
+              font-weight: bold;
+            }
+            &:hover{
+              font-weight: bold;
+            }
+          }
+        }
+        .underbar{
+          position: absolute;
+          top: 42px;
+          left: 0px;
+          display: inline-block;
+          width: 30px;
+          height: 2px;
+          background-color: $color-black;
+          transition: left .3s ease-in;
+          &.rank{
+            left: calc(30px + 70px);
+          }
+          &.kart{
+            left: calc(30px + 70px + 30px + 70px);
+          }
+          &.track{
+            left: calc(30px + 70px + 30px + 70px + 30px + 70px);
+          }
+        }
+      }
+      .menu-right {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+  }
+
+}
+

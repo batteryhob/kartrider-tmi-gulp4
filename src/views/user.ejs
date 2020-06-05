@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GULP 4.0 - EJS, SASS, IMAGE SPRITE</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/user/user.css">
+    <link rel="stylesheet" href="./css/sprite.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <script>
+        var percentageComplete = 0.7;
+        var strokeDashOffsetValue = 100 - (percentageComplete * 100);
+        var progressBar = $(".js-progress-bar");
+        progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+    </script>
+    <style>
+        .svg-icon {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="contents">
+            <i class="fas fa-home"></i>
+            <div class="menu-center desktop">
+                <ul>
+                    <li class="active">
+                        검색
+                    </li>
+                    <li>
+                        랭킹
+                    </li>
+                    <li>
+                        카트
+                    </li>
+                    <li>
+                        트랙
+                    </li>
+                </ul>
+                <div class="underbar">
+                </div>
+            </div>
+            <div class="menu-right">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <div class="sticky mobile">
+        <div>
+            <i class="fas fa-home"></i>
+            <div class="menu-right">
+                <i class="fas fa-search"></i>
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </div>
+
+    <!-- <nav>
+        <ul>
+            <% for(var i=0; i<5; i++) { %>
+                <li>
+                    <div>
+                        Navigation(EJS)
+                    </div>
+                </li>
+            <% } %>
+        </ul>
+    </nav> -->
+
+    <main>
+        <div class="title">
+            <div class="name">
+                <div class="lv">
+                    <div class="level">
+                        <p>LV.99</p>
+                    </div>
+                    <div class="nickname">
+                        <p>Stella동댜S</p>
+                    </div>
+                </div>
+                <div class="sub">
+                    <div class="point">
+                        <p>누적포인트<span>1,000PT</span></p>
+                    </div>
+                    <div class="rank">
+                        <p>순위<span>1위</span></p>
+                    </div>
+                </div>
+                <div class="share">
+                    <ul>
+                        <li>
+                            <i class="svg-icon svg-icon-share-14 svg-icon-share-14-dims">
+                            </i>
+                            <span class="desktop">공유하기</span>
+                        </li>
+                        <li>
+                            <i class="svg-icon svg-icon-important-ver-2-14 svg-icon-important-ver-2-14-dims">
+                            </i>
+                            <span class="desktop">신고하기</span>
+                        </li>
+                        <li>
+                            <i class="svg-icon svg-icon-view-14 svg-icon-view-14-dims">
+                            </i>
+                            <span>12</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="searchbar desktop">
+                    <button>
+                        <img src="img/btn-magnifier-ver-2-22.png" srcset="img/btn-magnifier-ver-2-22@2x.png 2x,
+                        img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
+                    </button>
+                </div>
+            </div>
+            <div class="thumbnail">
+                <i class="icon-profile-round-bazzi"></i>
+            </div>
+        </div>
+
+        <section>
+
+            <div class="mode">
+                <ul>
+                    <li>
+                        <span class="active">개인전</span>
+                    </li>
+                    <li>
+                        <span>팀전</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="summary">
+                <div class="contents">
+                    <div class="left">
+                        <div class="total">
+                            <div class="small">
+                                <p>종합 전적.</p>
+                            </div>
+                            <div class="big">
+                                <p>500전 252승 248패</p>
+                            </div>
+                        </div>
+                        <div class="platform desktop">
+                            <div>
+                                <p>플랫폼 이용 비율</p>
+                            </div>
+                            <div>
+                                <ul>
+                                    <li>
+                                        PC<span>100%</span>
+                                    </li>
+                                    <li>
+                                        XBOX<span>100%</span>
+                                    </li>
+                                    <li>
+                                        Steam<span>100%</span>
+                                    </li>
+                                    <li>
+                                        PS<span>100%</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <% for(var i=0; i<3; i++) { %>
+                        <div class="chart">
+                            <div class="draw">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#00bc9b" />
+                                            <stop offset="100%" stop-color="#5eaefd" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__background" />
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__progress js-progress-bar" />
+                                </svg>
+                                <div class="icons">
+                                    <i class="svg-icon svg-icon-tmi-trophy-01 svg-icon-tmi-trophy-01-dims">
+                                    </i>
+                                    <div class="desktop">
+                                        <p>리타이어율</p>
+                                        <p>50%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc mobile">
+                                <p>리타이어율</p>
+                                <p>50%</p>
+                            </div>
+                        </div>
+                        <% } %>
+                    </div>
+                    <div class="bottom mobile">
+                        <div class="platform">
+                            플랫폼 이용 비율
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="record">
+                <div class="contents">
+                    <div class="left">
+                        <div class="wrapper">
+                            <div class="top">최대 기록.</div>
+                            <div class="desc">
+                                <ul>
+                                    <% for(var i=0; i<3; i++) { %>
+                                    <li>
+                                        <div class="first">
+                                            <span>드리프트 한 횟수</span>
+                                        </div>
+                                        <div class="last">
+                                            <p class="val">100KM</p>
+                                            <p class="rate">상위 34.3%</p>
+                                        </div>
+                                    </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="wrapper">
+                            <div class="top">
+                                <div>
+                                    순위변동추이.
+                                </div>
+                                <div class="atleast">
+                                    <span>최근 100경기</span><span class="blue">3.4위</span>
+                                    <span>최근 20경기</span><span class="blue">3.4위</span>
+                                </div>
+                            </div>
+                            <div class="chart">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="matches">
+                <div class="contents">
+                    <div class="tabs">
+                        <span class="active">트랙</span>
+                        <span>카트</span>
+                    </div>
+                    <div class="karttab"></div>
+                    <div class="tracktab"></div>
+                    <div class="list">
+                        <div class="top">
+                            <div>
+                                트랙 전적.
+                            </div>
+                            <div class="sub desktop">
+                                <i class="blue fas fa-circle"></i><span>1등</span>
+                                <i class="yellow fas fa-circle"></i><span>완주</span>
+                                <i class="pink fas fa-circle"></i><span>리타이어</span>
+                            </div>
+                        </div>
+                        <div>
+                            <ul>
+                                <% for(var i=0; i<10; i++) { %>
+                                <li class="match">
+                                    <div class="rank blue">
+                                        <div>
+                                            <i class="fas fa-circle"></i>
+                                            <span>1/8</span>
+                                        </div>
+                                    </div>
+                                    <div class="when">
+                                        <span>1 시간 전</span>
+                                    </div>
+                                    <div class="map">
+                                        <div class="name">
+                                            <div>
+                                                광산 꼬불꼬불꼬불꼬불꼬불 다운힐
+                                            </div>
+                                        </div>
+                                        <div class="mobile">
+                                            <span>1 시간 전</span>
+                                            <span>1'11'30</span>
+                                        </div>
+                                    </div>
+                                    <div class="time">
+                                        <span>1'11'30</span>
+                                    </div>
+                                    <div class="kartname">
+                                        <span class="kart">
+                                            <img src="/img/image-tmi-kart-4.png"
+                                                srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
+                                        </span>
+                                        <span class="name">
+                                            황금기사X
+                                        </span>
+                                    </div>
+                                    <div class="spread">
+                                        <div>
+                                            <i class="fas fa-chevron-down"></i>
+                                        </div>
+                                    </div>
+
+                                    <div class="detail">
+                                        <ul>
+                                            <% for(var j=0; j<8; j++) { %>
+                                            <li>
+                                                <div class="wrapper">
+                                                    <div class="kart">
+                                                        <img src="/img/image-tmi-kart-4.png"
+                                                            srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
+                                                    </div>
+                                                    <div class="result">
+                                                        <span>완주실패</span>
+                                                    </div>
+                                                    <div class="nick">
+                                                        배터리호
+                                                    </div>
+                                                    <div>
+                                                        1'22'33
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <% } %>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <div class="logos">
+            <img src="/img/icon-bi-nexon-24.png" srcset="img/icon-bi-nexon-24@2x.png 2x,
+            img/icon-bi-nexon-24@3x.png 3x" class="nexon">
+            <i class="fas fa-times"></i>
+            <img src="/img/icon-bi-intelligencelabs-24.png" srcset="img/icon-bi-intelligencelabs-24@2x.png 2x,
+                        img/icon-bi-intelligencelabs-24@3x.png 3x" class="labs">
+        </div>
+        <div class="policy">
+            개인정보취급방침
+        </div>
+        <div class="copy">
+            2020 NEXON Korea Corporation All Rights Reserved.
+        </div>
+    </footer>
+
+    <div class="raise mobile">
+        <div class="wrapper">
+            <div class="bar"></div>
+            <i class="close fas fa-times"></i>
+            <div class="top">
+                플랫폼 이용 비율.
+            </div>
+            <div>
+                <ul>
+                    <li>
+                        1
+                    </li>
+                    <li>
+                        2
+                    </li>
+                    <li>
+                        3
+                    </li>
+                    <li>
+                        4
+                    </li>
+                    <li>
+                        5
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,415 @@
+/* app.sass */
+@media only screen  and (min-width : 769px) {
+
+  .mobile {
+    display: none;
+  }
+
+  .desktop {
+    display: block;
+  }
+
+  header {
+    padding-top: 6px;
+    min-width: 375px;
+    height: 60px;  
+    background-color: #fff;
+    .contents {    
+      position: relative;
+      line-height: 60px;
+      .menu-center{
+        position: absolute;
+        top: 0px;
+        left: 50%;
+        font-size: 16px;
+        transform: translate(-50%, 0%);
+        ul{
+          display: flex;
+          li{
+            margin-left: 70px;
+            font-weight: 400;
+            cursor: pointer;
+            &:first-child{
+              margin-left: 0px;
+            }
+            &.active{
+              font-weight: bold;
+            }
+            &:hover{
+              font-weight: bold;
+            }
+          }
+        }
+        .underbar{
+          position: absolute;
+          top: 42px;
+          left: 0px;
+          display: inline-block;
+          width: 30px;
+          height: 2px;
+          background-color: $color-black;
+          transition: left .3s ease-in;
+          &.rank{
+            left: calc(30px + 70px);
+          }
+          &.kart{
+            left: calc(30px + 70px + 30px + 70px);
+          }
+          &.track{
+            left: calc(30px + 70px + 30px + 70px + 30px + 70px);
+          }
+        }
+      }
+      .menu-right {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+      }
+    }
+  }
+
+
+  main {
+    .title {
+      height: calc(306px - 60px);
+      .name {     
+        position: relative; 
+        padding: 0px;
+        padding-top: calc(187px - 60px);
+        .lv{
+          .level {
+            font-size: 16px;
+          }
+          .nickname{
+            font-size: 48px;
+          }
+        }
+        .sub{
+          position: absolute;
+          top: calc(306px - 60px);
+          margin-top: 81px;
+        }
+        .share{
+          position: absolute;
+          top: calc(306px - 60px);
+          right: 0px;
+          margin-top: 28px;
+          ul{
+            li{
+              span{
+                &.desktop {
+                  display: inline;
+                }
+                // svg 크기 고려
+              }              
+            }
+          }
+        }
+        .searchbar{
+          position: absolute;
+          top: calc(306px - 218px + 60px + 6px);
+          right: 0px;
+          width: 180px;
+          height: 40px;
+          border-radius: 25px;
+          background-color: #f6f6f6;
+          button{
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            border: none;
+            background-color: transparent;
+            outline:none;
+            transition: all .3 ease;
+            &:hover{
+              animation: searching .7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+            }
+            @keyframes searching {
+                0% {
+                  transform: rotate(0deg);
+                }
+                20% {
+                  transform: rotate(40deg);
+                }
+                75% {
+                  transform: rotate(-20deg);
+                }
+                100% {
+                  transform: rotate(0deg);
+                }
+            }            
+          }
+        }
+      }      
+      .thumbnail {
+        top: calc(100px - 60px);
+        right: 50%;
+        width: 410px;
+        height: 410px;
+        border-radius: 206px;
+        transform: translate(50%,0%);
+        .icon-profile-round-bazzi{
+          width: 306px;
+          height: 332px;
+        }
+      }
+    }
+    section {
+      margin-top: 334px;
+
+      .mode {
+        top: calc(-29px - 32px);
+        font-size: 20px;
+        ul{
+          li {
+            &:first-child {        
+              &::after {
+                margin-left: 15px;    
+              }              
+            }
+            &:nth-child(2) { 
+              margin-left: 25px;
+            }
+          }
+        }
+      }
+
+      .summary {
+        .contents {
+          .left {
+            flex: 1;
+            .total {
+              padding-bottom: 18px;
+              border-bottom: 1px solid $color-backgroundgray;
+              .small{
+                font-size: 16px;
+              }
+              .big {
+                font-size: 30px;
+              }
+            }
+            .platform {
+              margin-top: 20px;
+              line-height: 30px;
+              font-size: 1.4em;
+              ul{
+                display: flex;
+                align-self: flex-start;
+                flex-direction: column;
+                flex-wrap: wrap;
+                overflow: auto;
+                height: 140px;
+                li {
+                  margin-bottom: 16px;
+                  span {
+                    margin-left: 4px;
+                    color: $color-skyblue;
+                  }
+                }
+              }
+            }
+          }
+          .right {
+            flex: 3;
+            display: flex;
+            padding-top: 15px;
+            .chart{
+              flex: 1;
+              text-align: center;
+              $progress-bar-stroke-width: 1.5;
+              .draw {
+                margin-right: 32.5px;
+                margin-left: 32.5px;
+                .progress-bar__background {
+                    stroke-width: $progress-bar-stroke-width;
+                  }
+                .progress-bar__progress {
+                  stroke-width: $progress-bar-stroke-width;
+                }
+                .icons{
+                  .desktop{
+                    font-size: 1.8em;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .record {
+        .contents {
+          .left {
+            flex: 1;
+            margin-bottom: 0px;
+            margin-right: 20px;
+            .wrapper{
+              .top{
+                font-size: 16px;
+              }
+              .desc{
+                ul{
+                  margin-top: 6px;
+                  li{
+                    div{                        
+                      &.first{
+                        font-size: 14px;
+                      }
+                      &.last{
+                        .val {
+                          font-size: 14px;
+                        }
+                        .rate{
+                          font-size: 12px;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+          .right {
+            flex: 2;
+            .wrapper{
+              .top{
+                display: flex;
+                font-size: 16px;
+                .atleast {
+                  flex: 1;
+                  margin-top: 0px;
+                  line-height: 27px;
+                  text-align: right;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .matches{
+        .contents {
+          .tabs {
+            height: 62px;      
+            font-size: 1.6em;
+            span{
+              display: inline-block;
+              width: 52px;
+              line-height: 62px;
+              cursor: pointer;
+            };
+          }
+          .list {            
+            ul{
+              li.match{ 
+                padding-top: 0px;
+                padding-bottom: 0px;
+                height: 100px;
+                line-height: 100px;
+                font-size: 1.4em;
+                .rank {
+                  flex: 1;
+                  text-align: center;
+                }
+                .when {
+                  flex: 1;
+                  display: block;
+                }
+                .map{          
+                  flex: 3;    
+                  text-align: left; 
+                  .name {
+                    line-height: 100px;
+                    font-size: 1em;
+                  }            
+                }
+                .time {
+                  flex: 1;
+                  display: block;
+                }
+                .kartname {
+                  flex: 2;
+                  display: block;
+                  .kart{
+                    img{
+                      vertical-align: middle;
+                      margin-right: 16px;
+                    }
+                  }
+                  .name{
+                    vertical-align: middle;
+                  }
+                }
+                .spread{
+                  flex: 1;
+                  text-align: center;
+                  cursor: pointer;
+                }
+                &.active {
+                  color: $color-black;
+                  height: 300px;
+                  .spread{
+                    div{
+                      transform: rotate(180deg);
+                      transform-origin: 25% 25%;
+                    }
+                  }
+                  .detail{
+                    padding-top: 0px;
+                    line-height: 14px;
+                    overflow-x: hidden;
+                    ul {
+                      width: 100%;
+                      li{
+                        flex: 1;
+                        height: 204px;
+                        .wrapper{        
+                          div{
+                            &.kart{
+                              margin-top: 38px;
+                            }
+                            &.result{ 
+                              margin-top: 22px;
+                            }
+                            &.nick{ 
+                              margin-top: 9px;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                &:hover {                  
+                  color: $color-black;
+                  .spread{
+                    div{
+                      transform: rotate(180deg);
+                      transform-origin: 25% 25%;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    margin-top: 50px;
+    .policy{
+      margin-top: 22px;
+      font-size: 12px;
+    }
+    .copy{
+      margin-top: 7px;
+      margin-bottom: 258px;
+      font-size: 12px;
+    }
+  }
+
+}
+
+  
