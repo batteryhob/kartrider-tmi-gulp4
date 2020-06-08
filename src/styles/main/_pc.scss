@@ -79,44 +79,80 @@
     section {
       padding: 0px;
       padding-top: calc(336px - 60px);
-      .txt {
-        font-size: 24px;
-      }
-      .visual {
-        max-width: 760px;
-        margin-top: 20px;
-        img{
-          width: 375px;
-          height: 123px;
+      padding-bottom: 500px;
+      .search{
+        .txt {
+          font-size: 24px;
         }
-      }
-      .searchbar {
-        margin-top: 42px;
-        max-width: 760px;
-        height:90px;
-        form {
-          padding: 31px 31px;
-          .contents{
-            .select {
-              label {   
-                width: 51px;       
-              }
-              select {
-                width: 51px;  
-              }
-            }
-            input {
-              padding-left: 32px;
-            }
-            .btn {
-            }
+        .visual {
+          max-width: 760px;
+          margin-top: 20px;
+          img{
+            width: 375px;
+            height: 123px;
+          }
+        }
+        &.active{
+          .txt{
+            position: relative;
+            width: initial;
+            top: initial;
+            left: initial;
+            z-index: initial;
+          }
+          .visual{
+            display: none;
+          }
+          .subtitle{
+            display: none;
+          }
+        }
+        .searchbar {
+          margin-top: 42px;
+          max-width: 760px;
+          height:90px;
+          &.active{
+            position: static;
+            margin: 0 auto;
+            margin-top: 42px;
+            padding-top: 0px;
+            max-width: 760px;
+            height: 90px;
+            border-radius: 10px 10px 0px 0px;
+            box-sizing: border-box;
+            box-shadow: 8px 8px 15px 5px rgba(48, 191, 239, 0.26);
             .dao{
-              position: relative;
-              width: 380px;
-              img{
-                position: absolute;
-                top: -240px;
-                left: 0px;
+              display: none;
+            }
+            .current{
+              border-radius: 0px 0px 10px 10px;
+              box-shadow: 8px 8px 15px 5px rgba(48, 191, 239, 0.26);
+            }
+          }
+          form {
+            padding: 31px 31px;
+            .contents{
+              .select {
+                label {   
+                  width: 51px;       
+                }
+                select {
+                  width: 51px;  
+                }
+              }
+              input {
+                padding-left: 32px;
+              }
+              .btn {
+              }
+              .dao{
+                position: relative;
+                width: 380px;
+                img{
+                  position: absolute;
+                  top: -240px;
+                  left: 0px;
+                }
               }
             }
           }
