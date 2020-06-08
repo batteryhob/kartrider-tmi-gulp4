@@ -53,45 +53,53 @@
             </div>
         </div>
     </header>
-    <!-- <nav>
-        <ul>
-            <% for(var i=0; i<5; i++) { %>
-                <li>
-                    <div>
-                        Navigation(EJS)
-                    </div>
-                </li>
-            <% } %>
-        </ul>
-    </nav> -->
 
     <main>
+
+        <div class="bg">
+            <img src="/img/search-bg.png" />
+        </div>
 
         <section>
 
             <div class="search">
+                
+                <div class="txt">
+                    <div class="helloworld">
+                        홀로로로로로롤로로로로롤로롤
+                    </div>
+                </div>
 
                 <div class="visual">
-
+                    <img src="/img/bitmap-copy.png" />
                 </div>
-                
+
+                <div class="subtitle">
+                    <div></div>
+                </div>
+
                 <div class="searchbar">
                     <form onsubmit="return false;">
-                        <div class="select">
-                            <label for="selectCategory">유저</label>
-                            <select id="selectCategory">
-                                <option value="유저">유저</option>
-                                <option value="카트">카트</option>
-                                <option value="트랙">트랙</option>
-                            </select>
+                        <div class="contents">
+                            <div class="select">
+                                <label for="selectCategory">유저</label>
+                                <select id="selectCategory">
+                                    <option value="유저">유저</option>
+                                    <option value="카트">카트</option>
+                                    <option value="트랙">트랙</option>
+                                </select>
+                            </div>
+                            <input type="search" placeholder="유저 닉네임을 입력해주세요.">
+                            <button class="btn">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div class="dao desktop">
+                                <img src="/img/rolling-charactor.png">
+                            </div>
                         </div>
-                        <input type="search" placeholder="카트라이더 닉네임을 입력">
-                        <button class="btn">
-                            <i class="fas fa-search"></i>
-                        </button>
                     </form>
                 </div>
-                
+
             </div>
 
 
@@ -100,8 +108,23 @@
     </main>
 
     <footer>
-        개인정보취급방침
+        <div class="wrapper">
+            <div class="logos">
+                <img src="/img/icon-bi-nexon-24.png" srcset="img/icon-bi-nexon-24@2x.png 2x,
+                img/icon-bi-nexon-24@3x.png 3x" class="nexon">
+                <i class="fas fa-times"></i>
+                <img src="/img/icon-bi-intelligencelabs-24.png" srcset="img/icon-bi-intelligencelabs-24@2x.png 2x,
+                            img/icon-bi-intelligencelabs-24@3x.png 3x" class="labs">
+            </div>
+            <div class="policy">
+                개인정보취급방침
+            </div>
+            <div class="copy">
+                2020 NEXON Korea Corporation All Rights Reserved.
+            </div>
+        </div>
     </footer>
 
 </body>
+
 </html>

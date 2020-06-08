@@ -13,7 +13,7 @@
     padding-top: 6px;
     min-width: 375px;
     height: 60px;  
-    background-color: #fff;
+    background-color: transparent;
     .contents {    
       position: relative;
       line-height: 60px;
@@ -64,6 +64,82 @@
         position: absolute;
         top: 0px;
         right: 0px;
+      }
+    }
+  }
+
+  main {
+    .bg{
+      padding-top: calc(171px - 60px);
+      margin-bottom: 150px;
+      img{
+        max-width: 700px;
+      }
+    }
+    section {
+      padding: 0px;
+      padding-top: calc(336px - 60px);
+      .txt {
+        font-size: 24px;
+      }
+      .visual {
+        max-width: 760px;
+        margin-top: 20px;
+        img{
+          width: 375px;
+          height: 123px;
+        }
+      }
+      .searchbar {
+        margin-top: 42px;
+        max-width: 760px;
+        height:90px;
+        form {
+          padding: 31px 31px;
+          .contents{
+            .select {
+              label {   
+                width: 51px;       
+              }
+              select {
+                width: 51px;  
+              }
+            }
+            input {
+              padding-left: 32px;
+            }
+            .btn {
+            }
+            .dao{
+              position: relative;
+              width: 380px;
+              img{
+                position: absolute;
+                top: -240px;
+                left: 0px;
+              }
+            }
+          }
+        }
+      }
+    }  
+  }
+
+  footer {
+    .wrapper{
+      display: flex;
+      padding: 0px 42px 34px 42px;
+      .logos{
+        width: 180px;
+      }
+      .policy{
+        flex: 1;
+        margin-top: 0px
+      }
+      .copy{
+        flex: 1;
+        margin-top: 0px;
+        text-align: right;
       }
     }
   }
