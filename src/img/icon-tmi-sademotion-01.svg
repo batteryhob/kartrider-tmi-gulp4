@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="94" height="94" viewBox="0 0 94 94">
+    <defs>
+        <filter id="prefix__a" width="146.2%" height="146.2%" x="-23.1%" y="-23.1%" filterUnits="objectBoundingBox">
+            <feOffset dx="2" dy="2" in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="2"/>
+            <feColorMatrix in="shadowBlurOuter1" result="shadowMatrixOuter1" values="0 0 0 0 0.870588235 0 0 0 0 0.0431372549 0 0 0 0 0.196078431 0 0 0 0.246694712 0"/>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"/>
+                <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+        </filter>
+        <circle id="prefix__b" cx="25.74" cy="25.74" r="25.74"/>
+        <path id="prefix__d" d="M5.148 14.872c2.843 0 5.148-2.08 5.148-4.647C10.296 5.577 6.178 0 5.148 0 4.118 0 0 5.577 0 10.225c0 2.566 2.305 4.647 5.148 4.647z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd" transform="translate(2 7)">
+        <circle cx="80.716" cy="38.716" r="1.716" fill="#F2B7C2"/>
+        <circle cx="2.86" cy="52.86" r="2.86" fill="#F51747"/>
+        <circle cx="32.86" cy="2.86" r="2.86" fill="#F51747"/>
+        <circle cx="53.86" cy="75.86" r="2.86" fill="#F51747"/>
+        <circle cx="13.58" cy="41.036" r="1.716" fill="#F2B7C2"/>
+        <circle cx="65.716" cy="67.716" r="1.716" fill="#F2B7C2"/>
+        <circle cx="65.716" cy="9.716" r="1.716" fill="#F2B7C2"/>
+        <path fill="#EBAB86" d="M14.152 58.768L14.152 61.056 11.864 61.056 11.864 63.344 14.152 63.344 14.152 65.632 16.44 65.632 16.44 63.344 18.728 63.344 18.728 61.056 16.44 61.056 16.44 58.768zM84.288 50L84.288 52.288 82 52.288 82 54.576 84.288 54.576 84.288 56.864 86.576 56.864 86.576 54.576 88.864 54.576 88.864 52.288 86.576 52.288 86.576 50z"/>
+        <g filter="url(#prefix__a)" transform="translate(18.872 14.44)">
+            <mask id="prefix__c" fill="#fff">
+                <use xlink:href="#prefix__b"/>
+            </mask>
+            <use fill="#DE0B32" xlink:href="#prefix__b"/>
+            <ellipse cx="21.164" cy="20.592" fill="#F4144C" mask="url(#prefix__c)" rx="25.74" ry="26.312"/>
+            <circle cx="20.592" cy="17.16" r="22.88" fill="#FD446E" mask="url(#prefix__c)"/>
+            <path fill="#FFF" d="M21.736 29.744c1.11-2.288 2.635-3.432 4.576-3.432 2.912 0 3.744 1.716 4.576 3.432-3.05-1.144-6.101-1.144-9.152 0z" mask="url(#prefix__c)"/>
+            <path fill="#44CEF4" d="M18.304 27.456c.632 0 1.144-.48 1.144-1.072 0-1.073-.915-2.36-1.144-2.36-.229 0-1.144 1.287-1.144 2.36 0 .592.512 1.072 1.144 1.072z" mask="url(#prefix__c)"/>
+            <rect width="3.432" height="4.576" x="32.032" y="18.304" fill="#FFF" mask="url(#prefix__c)" rx="1.716"/>
+            <rect width="3.432" height="4.576" x="17.527" y="17.972" fill="#FFF" mask="url(#prefix__c)" rx="1.716"/>
+            <rect width="1.144" height="4.576" x="34.32" y="14.872" fill="#FFF" mask="url(#prefix__c)" rx=".572" transform="rotate(-48 34.892 17.16)"/>
+            <rect width="1.144" height="4.576" x="17.16" y="14.872" fill="#FFF" mask="url(#prefix__c)" rx=".572" transform="scale(-1 1) rotate(-48 0 56.987)"/>
+        </g>
+        <g transform="translate(57.768 16.118)">
+            <mask id="prefix__e" fill="#fff">
+                <use xlink:href="#prefix__d"/>
+            </mask>
+            <use fill="#44CEF4" xlink:href="#prefix__d"/>
+            <path fill="#74DDFA" d="M1.734 13.055c2.527 0 5.776-1.063 5.776-6.117 0-5.055-3.936-9.575-6.463-9.575-2.528 0-2.689 4.52-2.689 9.575 0 5.054.849 6.117 3.376 6.117z" mask="url(#prefix__e)" transform="rotate(13 2.934 5.21)"/>
+            <ellipse cx=".572" cy="7.436" fill="#B8F0FF" mask="url(#prefix__e)" rx="2.86" ry="4.004" transform="rotate(14 .572 7.436)"/>
+        </g>
+    </g>
+</svg>

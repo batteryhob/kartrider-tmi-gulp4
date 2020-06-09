@@ -37,25 +37,57 @@ header {
   .contents {    
     position: relative;
     line-height: 60px;
+    .tmi{
+      vertical-align: middle;
+      width: 52px;
+      height: 20px;
+      margin-left: 20px;
+    }
     .menu-right {
       position: absolute;
-      top: 0px;
-      right: 0px;
+      top: 5px;
+      right: 20px;
     }
   }
 }
 
 .sticky {
+  @extend header;
   position: fixed;
   width: 100%;
   top: 0px;
-  z-index: 9;
-  @extend header;
-  background-color: red;
-  transition: transform .5s ease-in-out;
+  z-index: 9;  
+  background-color: #fff;
+  transition: transform .3s ease-in-out;
   transform: translate(0px, -60px);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.07);
   &.active{
     transform: translate(0px, 0px);
+  }
+  .contents{
+    .profile{
+      display: inline-block;
+      line-height: 60px;
+      img {
+        margin-left: 20px;
+        width: 40px;
+        vertical-align: middle;
+      }
+      .name{
+        display: inline-block;
+        margin-left: 12px;
+        font-size: 13px;
+        vertical-align: middle;
+        p{
+          line-height: 19px;
+          font-weight: 400;
+          &.nick{
+            font-size: 14px;
+            font-weight: 500;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -128,16 +160,19 @@ main {
       -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
       -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
       box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
-      .icon-profile-round-bazzi{
+      .profile{
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%,-55%);
-        display: inline-block;
+        margin-top: -62.5px;
+        margin-left: -52px;
         width: 104px;
         height: 113px;
-        background-size: 582% auto;
-        background-position: 0px -29.1%;
+        background-image: url(/img/profile-round.png);
+        background-size: contain;
+        &.other{
+          background-image: url(/img/profile-round2.png);
+        }
       }
     }
   }
@@ -251,6 +286,9 @@ main {
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%,-50%);
+                img{
+                  width: 60px;
+                }
               }
             }
             .desc {
@@ -282,12 +320,12 @@ main {
               right: 21px;
             }
             &.active {
-              background-color: $color-coolgray;
-              color: #fff;
+              background-color: #fff;
+              border: solid 1px #ccc;
             }
             &:hover {
-              background-color: $color-coolgray;
-              color: #fff;
+              background-color: #fff;
+              border: solid 1px #ccc;
             }
           }
         }
@@ -308,6 +346,7 @@ main {
           background-color: #fff;
           margin-bottom: 20px;
           .wrapper{
+            display: none;
             width: 100%;
             .top{
               font-size: 1.8em;
@@ -318,20 +357,25 @@ main {
                 li{
                   display: flex;
                   margin-top: 24px;
-                  div{                  
-                    flex: 1;                  
+                  div{              
                     &.first{
+                      flex: 1.1; 
                       line-height: 46px;
-                      font-size: 1.6em;
+                      font-size: 16px;
+                      svg {
+                        vertical-align: middle;
+                        margin-right: 8px;
+                      }
                     }
                     &.last{
+                      flex: 0.9; 
                       text-align: right;
                       .val{
-                        font-size: 1.6em;
+                        font-size: 16px;
                       }
                       .rate{
                         margin-top: 2px;
-                        font-size: 1.4em;
+                        font-size: 14px;
                         font-weight: 400;
                         color: $color-coolgray;
                       }
@@ -339,6 +383,23 @@ main {
                   }
                 }
               }
+            }
+          }
+          .none{
+            text-align: center;
+            .top{
+              font-size: 18px;
+            }
+            .img{
+              margin-top: 37px;
+            }
+            .ready{
+              font-size: 24px;
+              color: #e06e8a;
+            }
+            .ready-desc{
+              font-size: 13px;
+              color: #ce95a2;
             }
           }
         }
@@ -408,6 +469,141 @@ main {
               border-bottom: 1px solid $color-black;
             }
           };
+        }
+        .karttab {
+         display: none;
+         flex-direction: row;
+         flex-wrap: wrap;
+         padding: 52px 24px 5px 24px;         
+         &.active{
+          display: flex;
+         }
+         .first{
+           flex: 1;
+           text-align: center; 
+           .top{
+              .kart-rank span{
+                display: inline-block;
+                box-sizing: border-box;
+                height: 26px;
+                line-height: 26px;
+                padding-left: 10px;
+                padding-right: 10px;
+                font-size: 1.4em;
+                border-radius: 6px;
+                background-color: $color-skyblue;
+                color: #fff;
+              }
+              .kart-name{
+                font-size: 2.4em;
+              }
+              .kart-img img{
+                margin-top: 24px;
+                width: 160px;
+                text-align: center;
+              }
+           }
+           .bottom{
+            ul{
+              li{
+                position: relative;
+                height: 60px;
+                line-height: 60px;
+                font-size: 1.4em;                
+                text-align: left;
+                border-bottom: 1px solid $color-backgroundgray;
+                img{
+                  width: 30px;
+                  vertical-align: middle;
+                  margin-right: 8px;
+                }
+                span{
+                  position: absolute;
+                  top: 0px;
+                  right: 0px;
+                }
+              }
+            }
+           }
+         }
+         .second{
+           flex: 1;
+         }
+         .select{
+            position: relative;
+            width: 100%;
+            height: 60px;
+            line-height: 60px;
+            padding-left: 22px;
+            border-radius: 10px;
+            border: solid 1px #cccccc;
+            background-color: #ffffff;
+            font-size: 1.6em;
+            i{
+              font-size: 14px;
+              position: absolute;
+              top: 22px;
+              right: 18px;
+            }
+            &.active {
+              background-color: $color-backgroundgray;
+            }
+            &:hover {
+              background-color: $color-backgroundgray;
+            }
+         }
+        }
+        .tracktab {
+          display: none;
+          padding: 50px 37px 5px 37px;
+          &.active{
+            display: block;
+           }
+          .avg{
+            text-align: right;
+            font-size: 14px;
+            margin-bottom: 20px;
+            span{
+              color: $color-skyblue;
+              margin-left: 3px;
+            }
+          }
+          ul{
+            li{
+              margin-bottom: 14px;
+              &:last-child {
+                margin-bottom: 0px;
+              }
+              .track-desc{
+                position: relative;
+                max-width: 100%;
+                padding: 30px 24px;
+                border-radius: 10px;
+                background-color: #fafafa;
+                font-size: 14px;
+                div{
+                  margin-bottom: 10px;
+                  &:last-child{
+                    margin-bottom: 0px;
+                  }
+                }
+                .track-name{
+                  font-size: 16px;
+                  margin-bottom: 18px;
+                }
+                span{
+                  color: $color-darkgray;
+                  margin-right: 15px;
+                }
+                img{
+                  position: absolute;
+                  right: 24px;
+                  bottom: 30px;
+                  width: 80px;
+                }
+              }
+            }
+          }
         }
         .list {
           padding: 55px 37px 55px 37px;
@@ -552,7 +748,7 @@ main {
                           text-align: center;
                           font-size: 14px;
                           font-weight: 400;
-                          color: $color-coolgray;
+                          color: $color-darkgray;
                           &.kart{
                             margin-top: 34px;
                           }
@@ -566,12 +762,31 @@ main {
                               padding-left: 5px;
                               padding-right: 5px;
                               font-size: 12px;
-                              border: 1px solid #ccc;
+                              border: 1px solid $color-yellow;
                               border-radius: 12px;
+                              background-color: #fff;
+                              color: $color-yellow;
+                              &.win{ 
+                                color: $color-skyblue;
+                                border-color: $color-skyblue;
+                              }
+                              &.retire{ 
+                                color: $color-pink;
+                                border-color: $color-pink;
+                              }
                             }
                           }
                           &.nick{ 
                             margin-top: 12px;
+                            margin-bottom: 3px;
+                          }
+                        }
+                      }
+                      &.active{
+                        background-color: #fff;
+                        .wrapper{
+                          div{
+                            color: $color-black !important;
                           }
                         }
                       }

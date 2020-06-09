@@ -20,6 +20,7 @@ html, body {
   font-family: "Noto Sans KR";
   font-size: 10px;
   font-weight: 500;
+  overflow-x: hidden;
 }
 
 .mobile {
@@ -31,22 +32,151 @@ html, body {
 }
 
 header {
+  position: relative;
   min-width: 375px;
   height: 60px;  
-  background-color: #fff;
+  z-index: 2;
   .contents {    
     position: relative;
     line-height: 60px;
+    .tmi{
+      vertical-align: middle;
+      width: 52px;
+      height: 20px;
+      margin-left: 20px;
+    }
     .menu-right {
       position: absolute;
-      top: 0px;
-      right: 0px;
+      top: 5px;
+      right: 20px;
     }
   }
 }
 
-main {
+main {  
   position: relative;
+  .bg-left-top{ 
+    position: absolute;
+    display: inline-block;
+    top: -166px;
+    left: -200px;
+    width: 601px;
+    height: 332px;
+    background-image: url(/img/bg-top-left-01.png);
+    background-position: 601px 332px;
+    z-index: 1;
+    animation: leftmove 5s ease-in infinite;
+    @keyframes leftmove {
+        0% {
+          left: -200px;
+        }
+        30% {
+          left: -120px;
+        }
+        50% {
+          left: -100px;
+        }
+        75% {
+          left: -90px;
+        }
+        100% {
+          left: -200px;
+        }
+    }
+  }
+  .bg-right-top{ 
+    position: absolute;
+    display: inline-block;
+    top: -86px;
+    right: -180px;
+    width: 298px;
+    height: 308px;
+    background-image: url(/img/bg-top-right-01.png);
+    background-position: 298px 308px;
+    z-index: 1;
+    animation: rightmove 5s ease-in-out infinite;
+    @keyframes rightmove {
+        0% {
+          right: -180px;
+        }
+        30% {
+          right: -130px;
+        }
+        50% {
+          right: -100px;
+        }
+        75% {
+          right: -90px;
+        }
+        100% {
+          right: -180px;
+        }
+    }
+  }
+  .bg-left-bottom{ 
+    position: absolute;
+    display: inline-block;
+    bottom: -85px;
+    left: 0px;
+    width: 288px;
+    height: 146px;
+    background-image: url(/img/bg-bottom-left-01.png);
+    z-index: 1;
+    animation: bleftmove 5s ease-in infinite;
+    @keyframes bleftmove {
+        0% {
+          left: 0px;
+        }
+        30% {
+          left: -20px;
+        }
+        50% {
+          left: -30px;
+        }
+        75% {
+          left: -35px;
+        }
+        100% {
+          left: 0px;
+        }
+    }
+  }
+  .bg-right-bottom{ 
+    display: none;
+  }
+  .bg-dao{
+    position: absolute;
+    bottom: -85px;
+    right: 0px;
+    width: 137px;
+    height: 135px;
+    background-image: url(/img/rolling-charactor.png);
+    background-size: cover;
+    z-index: 1;
+  }
+  .bg-point{ 
+    position: absolute;
+    display: inline-block;
+    bottom: 15%;
+    left: 20%;
+    width: 42px;
+    height: 42px;
+    background-image: url(/img/combined-shape-copy-14.png);
+    z-index: 1;
+    transform-origin: 300px -300px;
+    animation: bingle 7s linear infinite;
+    @keyframes bingle {
+      0% {
+        transform: rotate(0deg);          
+      }
+      50% {
+        transform: rotate(180deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
   .bg{
     position: absolute;
     display: block;
@@ -55,7 +185,7 @@ main {
     text-align: center;
     img{
       width: 100%;
-      animation: spin 5s ease-in-out infinite;
+      animation: spin 5s ease-in infinite;
       @keyframes spin {
           0% {
             transform: rotate(0deg);
@@ -70,10 +200,10 @@ main {
             transform: rotate(-20deg);
           }
           85% {
-            transform: rotate(110deg);
+            transform: rotate(100deg);
           }
           90% {
-            transform: rotate(90deg);
+            transform: rotate(80deg);
           }
           100% {
             transform: rotate(10deg);
@@ -156,9 +286,6 @@ main {
           padding-top: 85px;
           border-radius: 0px;
           box-shadow: none;
-          .dao{
-            display: none;
-          }
           .current{
             display: block;
             padding-left: 20px;
@@ -189,15 +316,15 @@ main {
           padding: 23px 20px;
           .contents{
             display: flex;
-            height: 27px;
+            height: 24px;
             .select {
               position: relative;
               -webkit-transition: opacity 0.5s; /* Safari */
               transition: opacity 0.5s;
               @mixin selectstyle {
                 width: 47px;
-                height: 27px;
-                line-height: 27px;
+                height: 24px;
+                line-height: 24px;
                 font-weight: 400;
                 font-size: 16px; 
               }
@@ -235,26 +362,31 @@ main {
             }
             input {
                 width: 100%;
-                height: 27px;
-                line-height: 27px;
+                height: 24px;
+                line-height: 24px;
                 padding-left: 18px;
                 outline: 0;
-                border: 0;                        
+                border: 0;
                 display: block;
                 font-size: 16px;
                 font-weight: 400;
                 color: #000;
                 background: transparent;
+                font-family: "Noto Sans KR";
             }
             .btn {
-                height: 27px;
-                line-height: 27px;
-                font-size: 16px;
-                font-weight: 400;
-                color: #000;
-                background-color: transparent;
-                border: none;
-                outline: 0;
+              height: 24px;
+              line-height: 24px;
+              font-size: 16px;
+              font-weight: 400;
+              color: #000;
+              background-color: transparent;
+              border: none;
+              outline: 0;
+              img{
+                width: 18px;
+                vertical-align: middle;
+              }
             }
           }
         }
@@ -267,6 +399,8 @@ main {
 }
 
 footer {
+  position: relative;
+  z-index: 2;
   .wrapper {
     padding: 0px 20px 17px 20px;
     text-align: left;

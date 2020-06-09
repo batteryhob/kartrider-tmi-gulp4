@@ -17,6 +17,10 @@
     .contents {    
       position: relative;
       line-height: 60px;
+      .tmi{
+        width: initial;
+        height: initial;
+      }
       .menu-center{
         position: absolute;
         top: 0px;
@@ -59,11 +63,6 @@
             left: calc(30px + 70px + 30px + 70px + 30px + 70px);
           }
         }
-      }
-      .menu-right {
-        position: absolute;
-        top: 0px;
-        right: 0px;
       }
     }
   }
@@ -113,6 +112,20 @@
           height: 40px;
           border-radius: 25px;
           background-color: #f6f6f6;
+          input{
+            margin-top: 9px;
+            width: 127px;
+            height: 19px;
+            line-height: 19px;
+            padding-left: 16px;
+            outline: 0;
+            border: 0;
+            display: block;
+            font-size: 14px;
+            color: #000;
+            background: transparent;
+            font-family: "Noto Sans KR";
+          }
           button{
             position: absolute;
             top: 10px;
@@ -148,7 +161,9 @@
         height: 410px;
         border-radius: 206px;
         transform: translate(50%,0%);
-        .icon-profile-round-bazzi{
+        .profile{
+          margin-top: -180px;
+          margin-left: -153px;
           width: 306px;
           height: 332px;
         }
@@ -193,16 +208,21 @@
               line-height: 30px;
               font-size: 1.4em;
               ul{
+                position: relative;
                 display: flex;
                 align-self: flex-start;
                 flex-direction: column;
                 flex-wrap: wrap;
-                overflow: auto;
-                height: 140px;
+                overflow: hidden;
+                height: 145px;
                 li {
                   margin-bottom: 16px;
+                  img{
+                    vertical-align: middle;
+                    width: 30px;
+                  }
                   span {
-                    margin-left: 4px;
+                    margin-left: 6px;
                     color: $color-skyblue;
                   }
                 }
@@ -227,6 +247,9 @@
                   stroke-width: $progress-bar-stroke-width;
                 }
                 .icons{
+                  img{
+                    width: initial;
+                  }
                   .desktop{
                     font-size: 1.8em;
                   }
@@ -268,6 +291,11 @@
                 }
               }
             }
+            .none{
+              .top{
+                font-size: 16px;
+              }
+            }
           }
           .right {
             flex: 2;
@@ -299,6 +327,138 @@
               cursor: pointer;
             };
           }
+          .karttab {
+            padding: 50px 38px 5px 38px;
+            .first{
+              padding: 34px 32px 34px 32px;
+              background-color: #fafafa;
+              border-radius: 10px 0px 0px 10px;
+              .top{
+                 .kart-img img{
+                   margin-top: 0px;
+                 }
+                 .kart-rank {
+                  text-align: left;
+                 }
+                 .kart-name {
+                  text-align: left;
+                 }
+              }
+              .bottom{
+               ul{
+                 li{
+                   height: 40px;
+                   line-height: 40px;
+                 }
+               }
+              }            
+            }
+            .second{
+              padding: 34px 32px 34px 32px;
+              background-color: #fafafa;             
+              border-radius: 0px 10px 10px 0px;
+              ul{
+                li{
+                  position: relative;
+                  height: 66px;
+                  line-height: 66px;
+                  margin-bottom: 6px;
+                  border-radius: 10px;
+                  background-color: #f4f4f4;
+                  font-size: 14px;
+                  .checkbox{
+                    position: relative;
+                    display: inline-block;
+                    width: 20px;
+                    height: 20px;
+                    margin-left: 22px;
+                    vertical-align: middle;
+                    background-color: #e7e7e7;
+                    border-radius: 10px;
+                    span{
+                      display: none;
+                    }
+                  }
+                  img{
+                    width: 40px;
+                    vertical-align: middle;
+                    margin-right: 14px;
+                    margin-left: 14px;
+                  }
+                  .desc{
+                    position: absolute;
+                    top: 0px;
+                    right: 22px;
+                    display: inline;
+                    color: #666;
+                  }
+                  &.active{
+                    background-color: #fff;
+                    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.07);
+                    .checkbox{
+                      span{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%,-50%);
+                        display: inline-block;
+                        width: 12px;
+                        height: 12px;
+                        background-color: #23b9ff;
+                        border-radius: 6px;
+                      }
+                    }
+                  }
+                  &:hover{
+                    background-color: #fff;
+                    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.07);                    
+                  }
+                }
+              }
+            }
+           }
+          .tracktab {
+            padding: 30px 42px 5px 42px;
+            .avg{
+              margin-bottom: 24px;
+              span{
+                margin-left: 7px;
+              }
+            }
+            ul{
+              position: relative;
+              width: 100%;
+              display: flex;
+              flex-direction: row;
+              flex-wrap: wrap;
+              li{
+                flex: 1;
+                min-width: calc(25% - 20px);
+                max-width: calc(25% - 20px);
+                margin-left: 10px;
+                margin-right: 10px;
+                margin-bottom: 20px;
+                .track-desc{
+                  padding: 34px 34px 98px 34px;
+                  div{
+                    margin-bottom: 8px;
+                  }
+                  .track-name{
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                  }
+                  span{
+                    margin-right: 10px;
+                  }
+                  img{
+                    right: 29px;
+                    bottom: 30px;
+                  }
+                }
+              }
+            }
+          }
+           
           .list {            
             ul{
               li.match{ 

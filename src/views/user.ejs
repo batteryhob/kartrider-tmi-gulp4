@@ -28,7 +28,9 @@
 <body>
     <header>
         <div class="contents">
-            <i class="fas fa-home"></i>
+            <svg class="tmi" xmlns="http://www.w3.org/2000/svg" width="73" height="28" viewBox="0 0 73 28">
+                <path fill-rule="evenodd" d="M66.5 0C70.09 0 73 2.91 73 6.5V28h-6V6.5c0-.276-.224-.5-.5-.5-.245 0-.45.177-.492.41L66 6.5V28h-6V6.5C60 2.91 62.91 0 66.5 0zm-15 0c3.512 0 6.373 2.785 6.496 6.267L58 6.5V28h-6V6.5l-.008-.09C51.95 6.177 51.745 6 51.5 6s-.45.177-.492.41L51 6.5v15c0 3.59-2.91 6.5-6.5 6.5S38 25.09 38 21.5v-15c0-.276-.224-.5-.5-.5-.245 0-.45.177-.492.41L37 6.5V28h-6V6.5C31 2.91 33.91 0 37.5 0S44 2.91 44 6.5v15c0 .276.224.5.5.5.245 0 .45-.177.492-.41L45 21.5v-15C45 2.91 47.91 0 51.5 0zM21 0c6.5 0 8 4 8 6.5S27.5 13 21 13v15h-6V8c0-.667.333-1 1-1h6.5c.333 0 .5-.167.5-.5 0-.333-.167-.5-.5-.5h-16c-.333 0-.5.167-.5.5 0 .333.167.5.5.5H13c.667 0 1 .333 1 1v20H8V13c-6.5 0-8-4-8-6.5S1.5 0 8 0h13z"/>
+            </svg>
             <div class="menu-center desktop">
                 <ul>
                     <li class="active">
@@ -48,18 +50,25 @@
                 </div>
             </div>
             <div class="menu-right">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-bars"></i>
+                <img src="img/btn-magnifier-ver-2-22.png" srcset="img/btn-magnifier-ver-2-22@2x.png 2x,
+                img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
             </div>
         </div>
     </header>
 
     <div class="sticky mobile">
-        <div>
-            <i class="fas fa-home"></i>
+        <div class="contents">
+            <div class="profile">        
+                <img src="/img/profile-round.png" srcset="/img/profile-round@2x.png 2x,
+                /img/profile-round@3x.png 3x" alt="프로필">
+                <div class="name">
+                    <p>LV.99</p>
+                    <p class="nick">배터리호</p>
+                </div>
+            </div>
             <div class="menu-right">
-                <i class="fas fa-search"></i>
-                <i class="fas fa-bars"></i>
+                <img src="img/btn-magnifier-ver-2-22.png" srcset="img/btn-magnifier-ver-2-22@2x.png 2x,
+                img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
             </div>
         </div>
     </div>
@@ -115,6 +124,7 @@
                     </ul>
                 </div>
                 <div class="searchbar desktop">
+                    <input type="text" placeholder="검색">
                     <button>
                         <img src="img/btn-magnifier-ver-2-22.png" srcset="img/btn-magnifier-ver-2-22@2x.png 2x,
                         img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
@@ -122,7 +132,8 @@
                 </div>
             </div>
             <div class="thumbnail">
-                <i class="icon-profile-round-bazzi"></i>
+                <div class="profile">
+                </div>
             </div>
         </div>
 
@@ -157,15 +168,31 @@
                             <div>
                                 <ul>
                                     <li>
+                                        <img src="/img/icon-tmi-platform-pc-01.png"
+                                        srcset="/img/icon-tmi-platform-pc-01@2x.png 2x,
+                                                /img/icon-tmi-platform-pc-01@3x.png 3x"
+                                        class="Icon_tmi_platform_pc_01">
                                         PC<span>100%</span>
                                     </li>
                                     <li>
+                                        <img src="/img/icon-tmi-platform-xbox-01.png"
+                                        srcset="/img/icon-tmi-platform-xbox-01@2x.png 2x,
+                                                /img/icon-tmi-platform-xbox-01@3x.png 3x"
+                                        class="Icon_tmi_platform_pc_01">
                                         XBOX<span>100%</span>
                                     </li>
                                     <li>
+                                        <img src="/img/icon-tmi-platform-steam-01.png"
+                                        srcset="/img/icon-tmi-platform-steam-01@2x.png 2x,
+                                                img/icon-tmi-platform-steam-01@3x.png 3x"
+                                        class="/Icon_tmi_platform_pc_01">
                                         Steam<span>100%</span>
                                     </li>
                                     <li>
+                                        <img src="/img/icon-tmi-platform-ps-01.png"
+                                        srcset="/img/icon-tmi-platform-ps-01@2x.png 2x,
+                                                /img/icon-tmi-platform-ps-01@3x.png 3x"
+                                        class="Icon_tmi_platform_pc_01">
                                         PS<span>100%</span>
                                     </li>
                                 </ul>
@@ -173,7 +200,7 @@
                         </div>
                     </div>
                     <div class="right">
-                        <% for(var i=0; i<3; i++) { %>
+
                         <div class="chart">
                             <div class="draw">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
@@ -189,8 +216,61 @@
                                         class="progress-bar__progress js-progress-bar" />
                                 </svg>
                                 <div class="icons">
-                                    <i class="svg-icon svg-icon-tmi-trophy-01 svg-icon-tmi-trophy-01-dims">
-                                    </i>
+                                    <img src="/img/icon-tmi-trophy-01.svg" >
+                                    <div class="desktop">
+                                        <p>승률</p>
+                                        <p>50%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc mobile">
+                                <p>승률</p>
+                                <p>50%</p>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="draw">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#00bc9b" />
+                                            <stop offset="100%" stop-color="#5eaefd" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__background" />
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__progress js-progress-bar" />
+                                </svg>
+                                <div class="icons">
+                                    <img src="/img/icon-tmi-checkflag-01.svg" >
+                                    <div class="desktop">
+                                        <p>완주율</p>
+                                        <p>50%</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="desc mobile">
+                                <p>완주율</p>
+                                <p>50%</p>
+                            </div>
+                        </div>
+                        <div class="chart">
+                            <div class="draw">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 34 34">
+                                    <defs>
+                                        <linearGradient id="gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                                            <stop offset="0%" stop-color="#00bc9b" />
+                                            <stop offset="100%" stop-color="#5eaefd" />
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__background" />
+                                    <circle cx="16" cy="16" r="15.9155" stroke="url(#gradient)"
+                                        class="progress-bar__progress js-progress-bar" />
+                                </svg>
+                                <div class="icons">
+                                    <img src="/img/icon-tmi-sademotion-01.svg" >
                                     <div class="desktop">
                                         <p>리타이어율</p>
                                         <p>50%</p>
@@ -202,7 +282,7 @@
                                 <p>50%</p>
                             </div>
                         </div>
-                        <% } %>
+
                     </div>
                     <div class="bottom mobile">
                         <div class="platform">
@@ -219,19 +299,61 @@
                             <div class="top">최대 기록.</div>
                             <div class="desc">
                                 <ul>
-                                    <% for(var i=0; i<3; i++) { %>
                                     <li>
-                                        <div class="first">
-                                            <span>드리프트 한 횟수</span>
+                                        <div class="first">                                            
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <g fill="#23B9FF" fill-rule="evenodd">
+                                                    <path d="M15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0zm0 .625C7.06.625.625 7.061.625 15c0 7.94 6.436 14.375 14.375 14.375 7.94 0 14.375-6.436 14.375-14.375C29.375 7.06 22.939.625 15 .625z"/>
+                                                    <path d="M29.713 12.07l.033.167c.086.464.151.935.194 1.413-13.263-2.71-17.842 2.724-13.74 16.302-.395.032-.795.048-1.2.048-3.092 0-5.965-.936-8.353-2.539l.04.48C5.348 12.395 13.023 7.104 29.713 12.07zm-.422-1.637l.018.053c.125.396.233.799.326 1.208-.346-.1-.7-.198-1.064-.296-16.162-4.363-24.024.559-23.587 14.767C1.924 23.42 0 19.435 0 15c0-1.187.138-2.342.399-3.45 6.508-5.218 16.139-5.59 28.892-1.117z"/>
+                                                </g>
+                                            </svg>
+                                            <span>드리프트 한 거리</span>
                                         </div>
                                         <div class="last">
                                             <p class="val">100KM</p>
                                             <p class="rate">상위 34.3%</p>
                                         </div>
                                     </li>
-                                    <% } %>
+                                    <li>
+                                        <div class="first">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <g fill="#23B9FF" fill-rule="evenodd">
+                                                    <path d="M15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0zm0 .625C7.06.625.625 7.061.625 15c0 7.94 6.436 14.375 14.375 14.375 7.94 0 14.375-6.436 14.375-14.375C29.375 7.06 22.939.625 15 .625z"/>
+                                                    <path d="M9.425 24.23l1.896 4.166 3.52 1.603c-2.49-.026-4.835-.658-6.894-1.757L7.156 26.5l2.269-2.27zm3.026-3.025l1.896 4.165 4.165 1.896-2.27 2.27-4.165-1.897-1.896-4.165 2.27-2.27zM25.915 4.71c.246.26.482.53.709.807L5.518 26.624c-.277-.227-.546-.463-.807-.709zM15.477 18.18l1.895 4.165 4.165 1.896-2.269 2.27-4.165-1.896-1.896-4.166 2.27-2.269zm8.86-14.92c.28.224.553.457.816.7L3.96 25.153c-.243-.263-.476-.536-.7-.816zm-5.835 11.894l1.896 4.166 4.165 1.895-2.27 2.27-4.164-1.896-1.896-4.165 2.27-2.27zm-18.499.168l1.469 3.226 4.165 1.896-2.27 2.269-1.66-.756C.663 19.966.054 17.712.003 15.32zm21.525-3.193l1.896 4.165 4.165 1.896-2.27 2.269-4.164-1.896-1.896-4.165 2.27-2.27zm-18.926-.772l1.896 4.165 4.165 1.896-2.27 2.27-4.165-1.897-1.896-4.165 2.27-2.27zm21.952-2.254l1.896 4.165 3.548 1.615L30 15c0 .268-.007.535-.02.8l-1.635 1.632-4.165-1.896-1.895-4.165 2.269-2.27zM5.628 8.33l1.895 4.165 4.165 1.896-2.269 2.27-4.165-1.896-1.896-4.166 2.27-2.269zM27.277 6.38c1.492 2.121 2.449 4.647 2.672 7.38l-2.743-1.248-1.896-4.166zM8.653 5.304L10.55 9.47l4.165 1.895-2.27 2.27-4.164-1.896-1.896-4.165 2.27-2.27zM11.68 2.28l1.896 4.165L17.74 8.34l-2.27 2.269-4.164-1.896L9.41 4.548l2.27-2.27zM15 0h.045l1.556 3.418 4.165 1.896-2.27 2.27-4.165-1.897-1.895-4.165L13.92.038C14.277.013 14.637 0 15 0zm1.166.045c2.695.207 5.191 1.126 7.3 2.57l-1.944 1.942-4.165-1.895z"/>
+                                                </g>
+                                            </svg>
+                                            <span>드리프트 한 횟수</span>
+                                        </div>
+                                        <div class="last">
+                                            <p class="val">100회</p>
+                                            <p class="rate">상위 34.3%</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="first">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <path fill="#23B9FF" fill-rule="evenodd" d="M15 0c8.284 0 15 6.716 15 15 0 8.284-6.716 15-15 15-8.284 0-15-6.716-15-15C0 6.716 6.716 0 15 0zm0 4.09C8.975 4.09 4.09 8.976 4.09 15S8.976 25.91 15 25.91 25.91 21.024 25.91 15 21.024 4.09 15 4.09zm0 .683c5.648 0 10.227 4.579 10.227 10.227 0 5.648-4.579 10.227-10.227 10.227-5.648 0-10.227-4.579-10.227-10.227C4.773 9.352 9.352 4.773 15 4.773zm-1.907 1.571l-.125.026c-1.613.379-3.055 1.197-4.195 2.322 1.839 1.962 2.574 3.27 2.208 3.922-.371.66-1.874.65-4.51-.032-.218.768-.335 1.58-.335 2.418 0 .839.117 1.65.334 2.419 2.637-.683 4.14-.694 4.51-.033.367.653-.368 1.96-2.206 3.92 1.168 1.156 2.656 1.987 4.318 2.352.75-2.59 1.5-3.885 2.249-3.885.733 0 1.467 1.24 2.2 3.72 1.408-.42 2.668-1.18 3.686-2.185-1.839-1.962-2.574-3.27-2.208-3.922.371-.66 1.874-.65 4.51.032.218-.768.335-1.58.335-2.418 0-.839-.117-1.65-.334-2.419-2.637.683-4.14.694-4.51.033-.367-.653.368-1.96 2.206-3.92-1.017-1.007-2.277-1.767-3.684-2.188-.734 2.481-1.468 3.721-2.201 3.721-.75 0-1.499-1.294-2.248-3.883zM15 11.591c1.883 0 3.41 1.526 3.41 3.409 0 1.883-1.527 3.41-3.41 3.41-1.883 0-3.41-1.527-3.41-3.41 0-1.883 1.527-3.41 3.41-3.41zm0 1.364c-1.13 0-2.045.915-2.045 2.045s.915 2.045 2.045 2.045 2.045-.915 2.045-2.045-.915-2.045-2.045-2.045z"/>
+                                            </svg>
+                                            <span>총 플레이 시간</span>
+                                        </div>
+                                        <div class="last">
+                                            <p class="val">총 1888시간 10분</p>
+                                            <p class="rate">상위 34.3%</p>
+                                        </div>
+                                    </li>
                                 </ul>
                             </div>
+                        </div>
+                        <div class="none">
+                            <p class="top">최대 기록</p>
+                            <div class="img">
+                                <img src="/img/icon-tmi-record-ready-01.png"
+                                srcset="/img/icon-tmi-record-ready-01@2x.png 2x,
+                                        /img/icon-tmi-record-ready-01@3x.png 3x"
+                                class="Icon_tmi_record_ready_01">
+                            </div>
+                            <p class="ready">준비중입니다.</p>
+                            <p class="ready-desc">(클로즈 베타3부터 이용 가능)</p>
                         </div>
                     </div>
                     <div class="right">
@@ -258,8 +380,94 @@
                         <span class="active">트랙</span>
                         <span>카트</span>
                     </div>
-                    <div class="karttab"></div>
-                    <div class="tracktab"></div>
+                    <div class="tracktab active">
+                        <div class="avg">
+                            평균 상위<span>43.1%</span>
+                        </div>
+                        <div>
+                            <ul><% for(var i=0; i<8; i++) { %>
+                                <li>
+                                    <div class="track-desc">
+                                        <div class="track-name">
+                                            사막 피라미드 탐험
+                                        </div>
+                                        <div>
+                                            <span>횟수</span>20
+                                        </div>
+                                        <div>
+                                            <span>기록</span>20
+                                        </div>
+                                        <div>
+                                            <span>상위</span>20
+                                        </div>
+                                        <div>
+                                            <span>승률</span>20
+                                        </div>
+                                        <img src="/img/map-2-04.png"
+                                        srcset="/img/map-2-04@2x.png 2x, /img/map-2-04@3x.png 3x">
+                                    </div>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="karttab">
+                        <div class="first">
+                            <div class="top">
+                                <p class="kart-rank"><span>legend</span></p>
+                                <p class="kart-name">핑크코튼</p>
+                                <div class="kart-img">
+                                    <img src="/img/image-tmi-kart-4.png"
+                                    srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
+                                </div>
+                            </div>
+                            <div class="bottom">
+                                <ul>
+                                    <% for(var i=0; i<4; i++) { %>
+                                    <li>
+                                        <img src="/img/map-2-04.png"
+                                        srcset="/img/map-2-04@2x.png 2x, /img/map-2-04@3x.png 3x">
+                                        쥐라기 공룡 결투장
+                                        <span>
+                                            1'11'11
+                                        </span>
+                                    </li>
+                                    <% } %>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="second desktop">
+                            <ul>
+                                <% for(var i=0; i<5; i++) { %>
+                                <li class="active">
+                                    <div class="checkbox">
+                                        <span></span>
+                                    </div>
+                                    <img src="/img/image-tmi-kart-4.png"
+                                    srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
+                                    쥐라기 공룡 결투장
+                                    <div class="desc">
+                                        <span>
+                                            1'11'11
+                                        </span>
+                                        <span>
+                                            1'11'11
+                                        </span>
+                                        <span>
+                                            1'11'11
+                                        </span>
+                                        <span>
+                                            1'11'11
+                                        </span>
+                                    </div>
+                                </li>
+                                <% } %>
+                            </ul>
+                        </div>
+                        <div class="select mobile">
+                            핑크코튼<i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
                     <div class="list">
                         <div class="top">
                             <div>
@@ -315,7 +523,24 @@
 
                                     <div class="detail">
                                         <ul>
-                                            <% for(var j=0; j<8; j++) { %>
+                                            <li class="active">
+                                                <div class="wrapper">
+                                                    <div class="kart">
+                                                        <img src="/img/image-tmi-kart-4.png"
+                                                            srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
+                                                    </div>
+                                                    <div class="result">
+                                                        <span class="win">1위</span>
+                                                    </div>
+                                                    <div class="nick">
+                                                        배터리호
+                                                    </div>
+                                                    <div>
+                                                        1'22'33
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <% for(var j=0; j<7; j++) { %>
                                             <li>
                                                 <div class="wrapper">
                                                     <div class="kart">
@@ -323,7 +548,7 @@
                                                             srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x">
                                                     </div>
                                                     <div class="result">
-                                                        <span>완주실패</span>
+                                                        <span class="retire">완주실패</span>
                                                     </div>
                                                     <div class="nick">
                                                         배터리호

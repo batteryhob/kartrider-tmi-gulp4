@@ -17,6 +17,10 @@
     .contents {    
       position: relative;
       line-height: 60px;
+      .tmi{
+        width: initial;
+        height: initial;
+      }
       .menu-center{
         position: absolute;
         top: 0px;
@@ -60,15 +64,62 @@
           }
         }
       }
-      .menu-right {
-        position: absolute;
-        top: 0px;
-        right: 0px;
-      }
     }
   }
 
   main {
+    .bg-left-top{ 
+      top: -66px;
+      left: 0px;
+      width: 601px;
+      height: 332px;
+      background-position: 601px 332px;
+    }
+    .bg-right-top{
+      top: -86px;
+      right: 0px;
+      width: 298px;
+      height: 308px;
+      background-position: 298px 308px;
+    }
+    .bg-left-bottom{ 
+      bottom: -54px;
+      left: 0px;
+      width: 288px;
+      height: 146px;
+    }
+    .bg-right-bottom{ 
+      position: absolute;
+      display: inline-block;
+      bottom: -85px;
+      right: 0px;
+      width: 818px;
+      height: 302px;
+      background-image: url(/img/bg-bottom-right-01.png);
+      z-index: 1;
+      animation: brightmove 5s ease-in infinite;
+      @keyframes brightmove {
+          0% {
+            right: 0px;
+          }
+          30% {
+            right: -20px;
+          }
+          50% {
+            right: -30px;
+          }
+          75% {
+            right: -35px;
+          }
+          100% {
+            right: 0px;
+          }
+      }
+    }
+    .bg-point{ 
+      bottom: 30%;
+      left: 25%;
+    }
     .bg{
       padding-top: calc(171px - 60px);
       margin-bottom: 150px;
@@ -130,20 +181,35 @@
             }
           }
           form {
-            padding: 31px 31px;
+            padding: 31px;
             .contents{
+              height: 27px;
               .select {
                 label {   
-                  width: 51px;       
+                  height: 27px;
+                  line-height: 27px;
+                  width: 51px;
+                  font-size: 18px;    
                 }
                 select {
-                  width: 51px;  
+                  height: 27px;
+                  line-height: 27px;
+                  width: 51px;
+                  font-size: 18px;
                 }
               }
               input {
+                height: 27px;
+                line-height: 27px;
                 padding-left: 32px;
+                font-size: 18px;
               }
               .btn {
+                height: 27px;
+                font-size: 18px;
+                img{
+                  width: 22px;
+                }
               }
               .dao{
                 position: relative;
