@@ -157,12 +157,7 @@
           .subtitle{
             display: none;
           }
-        }
-        .searchbar {
-          margin-top: 42px;
-          max-width: 760px;
-          height:90px;
-          &.active{
+          .searchbar{
             position: static;
             margin: 0 auto;
             margin-top: 42px;
@@ -180,6 +175,11 @@
               box-shadow: 8px 8px 15px 5px rgba(48, 191, 239, 0.26);
             }
           }
+        }
+        .searchbar {
+          margin-top: 42px;
+          max-width: 760px;
+          height:90px;
           form {
             padding: 31px;
             .contents{
