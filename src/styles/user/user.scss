@@ -13,13 +13,12 @@ $color-skyblue: #23b9ff;
 $color-yellow: #ffc95e;
 $color-pink: #fd446e;
 
-html, body {
+html {
   width: 100%;
   height: 100%;  
   font-family: "Noto Sans KR";
   font-size: 10px;
   font-weight: 500;
-  overflow-x: hidden;
 }
 
 .mobile {
@@ -34,7 +33,7 @@ html, body {
   background-color: $color-backgroundgray;
   padding-bottom: 1px;
   header {
-    min-width: 375px;
+    min-width: 320px;
     height: 60px;  
     background-color: #fff;
     .contents {    
@@ -48,8 +47,12 @@ html, body {
       }
       .menu-right {
         position: absolute;
-        top: 5px;
+        top: 20px;
         right: 20px;
+        cursor: pointer;
+        .homepage {
+          display: none
+        }
       }
     }
   }
@@ -97,7 +100,7 @@ html, body {
   main {
     .title{
       position: relative;
-      min-width: 375px;
+      min-width: 320px;
       height: calc(328px - 60px);
       background-color: #fff;
       transition: height .5s ease;
@@ -183,13 +186,13 @@ html, body {
     section {
       position: relative;
       margin-top: 104px;
-      min-width: 375px;
+      min-width: 320px;
       transition: margin-top .5s ease;
       .mode {
         position: absolute;
         top: calc(-29px - 18px);
         width: 100%;
-        min-width: 375px;
+        min-width: 320px;
         text-align: center;
         font-size: 22px;
         ul{
@@ -827,10 +830,11 @@ html, body {
         width: 63px;
         vertical-align: middle;
       }
-      i{
+      .close{
         margin-left: 5px;
         margin-right: 5px;
-        font-size: 10px;
+        width: 10px;
+        height: 10px;
         vertical-align: middle;
       }
       .labs{     
@@ -853,17 +857,23 @@ html, body {
   }
 
   .raise {
-    position: fixed;  
-    bottom: 0px;
+    position: fixed;
+    top: 0px;
+    left: 0px;
     width: 100%;
-    border-radius: 24px;
-    background-color: #fff;
+    height: 100%;    
+    background-color: rgba(0,0,0,0.3);
     transition: transform .5s ease-in-out;
-    transform: translate(0px, 812px);
+    transform: translate(0px, 100%);
     z-index: 9;
     .wrapper{
-      position: relative;  
+      position: absolute;
+      width: 100%;
+      bottom: 0px;
       padding: 52px 24px 45px 24px;
+      box-sizing: border-box;
+      border-radius: 24px 24px 0px 0px;
+      background-color: #fff;
       .bar {
         position: absolute; 
         top: 8px;
@@ -876,18 +886,72 @@ html, body {
       }
       .close{
         position: absolute; 
-        top: 29px;
+        top: 28px;
         right: 24px;
         font-size: 20px;
+        cursor: pointer;
       }
       .top {
         font-size: 1.8em;
       }
       ul{
-        margin-top: 30px;
-        font-size: 1.6em;
-        li{
-          
+        &.platform{
+          margin-top: 30px;
+          font-size: 1.6em;
+          max-height: 318px;
+          overflow-y: scroll;
+          li{
+            position: relative;
+            height: 38px;
+            line-height: 38px;
+            margin-bottom: 20px;
+            img{
+              vertical-align: middle;
+              margin-right: 12px;
+            }
+            span{
+              position: absolute;
+              top: 0px;
+              right: 24px;
+              color: $color-skyblue;
+            }
+          }
+        }
+        &.kartselect{
+          margin-top: 30px;
+          font-size: 1.6em;
+          max-height: 318px;
+          overflow-y: scroll;
+          li{
+            position: relative;
+            height: 41px;
+            line-height: 41px;
+            padding-top: 30px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #f1f1f1;
+            &:last-child{
+              border-bottom: none;
+            }
+            &:hover{
+              background-color: $color-lightgray;
+            }
+            .kartimg{
+              vertical-align: middle;
+              margin-right: 12px;
+            }
+            .sub{
+              position: absolute;
+              top: 10px;
+              right: 0px;
+              display: inline-block;
+              font-size: 14px;
+              color: $color-darkgray;
+              img{
+                margin-left: 10px;
+                margin-right: 5px;
+              }
+            }
+          }
         }
       }
     }

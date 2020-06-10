@@ -13,13 +13,12 @@ $color-skyblue: #23b9ff;
 $color-yellow: #ffc95e;
 $color-pink: #fd446e;
 
-html, body {
+html {
   width: 100%;
   height: 100%;  
   font-family: "Noto Sans KR";
   font-size: 10px;
   font-weight: 500;
-  overflow-x: hidden;
 }
 
 .mobile {
@@ -32,9 +31,11 @@ html, body {
 
 #main{
   background-color: #fff;
+  overflow-x: hidden;
+  overflow-y: hidden;
   header {
     position: relative;
-    min-width: 375px;
+    min-width: 320px;
     height: 60px;  
     z-index: 2;
     .contents {    
@@ -48,8 +49,12 @@ html, body {
       }
       .menu-right {
         position: absolute;
-        top: 5px;
+        top: 20px;
         right: 20px;
+        cursor: pointer;
+        .homepage {
+          display: none
+        }
       }
     }
   }
@@ -244,18 +249,23 @@ html, body {
         }
         .visual {
           margin: 0 auto;
-          margin-top: 7px;
+          margin-top: 12px;
           img{
-            width: 210px;
-            height: 70px;
+            width: 170px;
+            height: auto;
           }
         }
         .subtitle{
-          div{
-            display: inline-block;
-            width: 200px;
-            height: 10px;
-          }
+          margin-top: 15px;
+          font-family: Rajdhani;
+          font-size: 13px;
+          font-weight: 300;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 1.36px;
+          text-align: center;
+          color: #3284a5;
         }
         &.active{
           .txt{
@@ -263,7 +273,7 @@ html, body {
             width: 100%;
             top: 36px;
             left: 0px;
-            z-index: 3;
+            z-index: 5;
           }
           .searchbar{
               position: fixed;
@@ -275,10 +285,14 @@ html, body {
               padding-top: 85px;
               border-radius: 0px;
               box-shadow: none;
-              z-index: 2;
+              z-index: 4;
+              form{
+                border-radius: 0px;
+              }              
               .current{
                 display: block;
                 padding-left: 20px;
+                padding-right: 20px;
                 text-align: left;
                 border-top: 1px solid #ddd;
                 background-color: #fff;
@@ -289,18 +303,39 @@ html, body {
                   line-height: 62px;
                 }
                 ul{
+                  padding-bottom: 100px;
                   li{
+                    position: relative;
                     height: 50px;
                     line-height: 50px;
                     font-size: 14px;
                     font-weight: 300;
                     color: $color-darkgray;
-                    &:last-child{
-                      margin-bottom: 100px;
+                    img{
+                      position: absolute;
+                      top: 14px;
+                      right: 0px;
+                      width: 12px;
+                      height: 12px;
+                      cursor: pointer;
+                    }
+                    &:hover{
+                      background-color: $color-lightgray;
                     }
                   }
                 }              
             }
+          }
+          .cover{
+            display: block;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 2;
+            height: 100vh;
+            width: 100vw;
+            opacity: 0.2;
+            background-color: #000000;
           }
         }
         .searchbar {
@@ -398,6 +433,9 @@ html, body {
             display: none;
           }
         }
+        .cover{
+          display: none;
+        }
       }
     }  
   }
@@ -415,10 +453,11 @@ html, body {
           width: 63px;
           vertical-align: middle;
         }
-        i{
+        .close{
           margin-left: 5px;
           margin-right: 5px;
-          font-size: 10px;
+          width: 10px;
+          height: 10px;
           vertical-align: middle;
         }
         .labs{     

@@ -11,7 +11,6 @@
 
   header {
     padding-top: 6px;
-    min-width: 375px;
     height: 60px;  
     background-color: transparent;
     .contents {    
@@ -20,6 +19,7 @@
       .tmi{
         width: initial;
         height: initial;
+        margin-left: 42px;
       }
       .menu-center{
         position: absolute;
@@ -61,6 +61,36 @@
           }
           &.track{
             left: calc(30px + 70px + 30px + 70px + 30px + 70px);
+          }
+        }
+      }
+      .menu-right {
+        line-height: 30px;
+        right: 42px;
+        .homepage{
+          display: inline-block;
+          height: 30px;
+          span{
+            margin-right: 5px;
+            font-family: Rajdhani;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            vertical-align: middle;
+          }
+          .arrow{
+            position: relative;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: #25bafe;
+            border-radius: 7px;
+            vertical-align: middle;
+            img{
+              position: absolute;
+              top: 3px;
+              left: 3px;
+            }
           }
         }
       }
@@ -139,9 +169,20 @@
           max-width: 760px;
           margin-top: 20px;
           img{
-            width: 375px;
-            height: 123px;
+            width: 335px;
+            height: auto;
           }
+        }
+        .subtitle{
+          font-family: Rajdhani;
+          font-size: 21px;
+          font-weight: 300;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: 2.2px;
+          text-align: center;
+          color: #3284a5;
         }
         &.active{
           .txt{
@@ -170,10 +211,29 @@
             .dao{
               display: none;
             }
+            form{
+              border-radius: 10px 10px 0px 0px;
+            }
             .current{
               border-radius: 0px 0px 10px 10px;
               box-shadow: 8px 8px 15px 5px rgba(48, 191, 239, 0.26);
+              ul{
+                li{
+                  img{
+                    position: absolute;
+                    top: 16px;
+                    right: 20px;
+                    width: 14px;
+                    height: 14px;
+                    cursor: pointer;
+                  }
+                }
+              }
+
             }
+          }
+          .cover{
+            display: none;
           }
         }
         .searchbar {

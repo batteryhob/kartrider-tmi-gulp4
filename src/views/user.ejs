@@ -17,6 +17,10 @@
         var strokeDashOffsetValue = 100 - (percentageComplete * 100);
         var progressBar = $(".js-progress-bar");
         progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
+
+        window.addEventListener("scroll",(e)=>{
+            console.log(e)
+        }, false)
     </script>
     <style>
         .svg-icon {
@@ -53,8 +57,13 @@
                         </div>
                     </div>
                     <div class="menu-right">
-                        <img src="/img/btn-magnifier-ver-2-22.png" srcset="/img/btn-magnifier-ver-2-22@2x.png 2x,
-                        /img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
+                        <img class="mobile" src="/img/btn-magnifier-ver-2-22.png" srcset="/img/btn-magnifier-ver-2-22@2x.png 2x, /img/btn-magnifier-ver-2-22@3x.png 3x">
+                        <div class="homepage">
+                            <span>Kartrider Drift</span>
+                            <div class="arrow">
+                                <img src="/img/icon-arrow-l-8.png" >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -74,19 +83,7 @@
                         img/btn-magnifier-ver-2-22@3x.png 3x" class="Btn_Magnifier_ver2_22">
                     </div>
                 </div>
-            </div>
-        
-            <!-- <nav>
-                <ul>
-                    <% for(var i=0; i<5; i++) { %>
-                        <li>
-                            <div>
-                                Navigation(EJS)
-                            </div>
-                        </li>
-                    <% } %>
-                </ul>
-            </nav> -->
+            </div>       
         
             <main>
                 <div class="title">
@@ -110,18 +107,15 @@
                         <div class="share">
                             <ul>
                                 <li>
-                                    <i class="svg-icon svg-icon-share-14 svg-icon-share-14-dims">
-                                    </i>
+                                    <img src="/img/icon-share-14.svg" alt="share"/>
                                     <span class="desktop">공유하기</span>
                                 </li>
                                 <li>
-                                    <i class="svg-icon svg-icon-important-ver-2-14 svg-icon-important-ver-2-14-dims">
-                                    </i>
+                                    <img src="/img/icon-important-ver-2-14.svg" alt="report"/>
                                     <span class="desktop">신고하기</span>
                                 </li>
                                 <li>
-                                    <i class="svg-icon svg-icon-view-14 svg-icon-view-14-dims">
-                                    </i>
+                                    <img src="/img/icon-view-14.svg" alt="view"/>
                                     <span>12</span>
                                 </li>
                             </ul>
@@ -577,11 +571,18 @@
         
             <footer>
                 <div class="logos">
-                    <img src="/img/icon-bi-nexon-24.png" srcset="img/icon-bi-nexon-24@2x.png 2x,
-                    img/icon-bi-nexon-24@3x.png 3x" class="nexon">
-                    <i class="fas fa-times"></i>
-                    <img src="/img/icon-bi-intelligencelabs-24.png" srcset="img/icon-bi-intelligencelabs-24@2x.png 2x,
-                                img/icon-bi-intelligencelabs-24@3x.png 3x" class="labs">
+                    <img src="/img/icon-bi-nexon-24.png" 
+                    srcset="/img/icon-bi-nexon-24@2x.png 2x, 
+                    /img/icon-bi-nexon-24@3x.png 3x" 
+                    class="nexon">
+                    <img src="/img/icon-popupclose-14.png"
+                    srcset="/img/icon-popupclose-14@2x.png 2x,
+                            /img/icon-popupclose-14@3x.png 3x"
+                    class="close">
+                    <img src="/img/icon-bi-intelligencelabs-24.png" 
+                    srcset="/img/icon-bi-intelligencelabs-24@2x.png 2x, 
+                    /img/icon-bi-intelligencelabs-24@3x.png 3x" 
+                    class="labs">
                 </div>
                 <div class="policy">
                     개인정보취급방침
@@ -594,31 +595,65 @@
             <div class="raise mobile">
                 <div class="wrapper">
                     <div class="bar"></div>
-                    <i class="close fas fa-times"></i>
+                    <img src="/img/icon-close-16.svg" class="close">
                     <div class="top">
-                        플랫폼 이용 비율.
+                        카트 선택.
                     </div>
                     <div>
-                        <ul>
+                        <ul class="platform">
                             <li>
-                                1
+                                <img src="/img/icon-tmi-platform-pc-01.png"
+                                srcset="/img/icon-tmi-platform-pc-01@2x.png 2x,
+                                        /img/icon-tmi-platform-pc-01@3x.png 3x"
+                                class="Icon_tmi_platform_pc_01" />
+                                PC<span>100%</span>
                             </li>
                             <li>
-                                2
+                                <img src="/img/icon-tmi-platform-xbox-01.png"
+                                srcset="/img/icon-tmi-platform-xbox-01@2x.png 2x,
+                                        /img/icon-tmi-platform-xbox-01@3x.png 3x"
+                                class="Icon_tmi_platform_pc_01" />
+                                XBOX<span>100%</span>
                             </li>
                             <li>
-                                3
+                                <img src="/img/icon-tmi-platform-steam-01.png"
+                                srcset="/img/icon-tmi-platform-steam-01@2x.png 2x,
+                                        img/icon-tmi-platform-steam-01@3x.png 3x"
+                                class="/Icon_tmi_platform_pc_01" />
+                                Steam<span>100%</span>
                             </li>
                             <li>
-                                4
+                                <img src="/img/icon-tmi-platform-ps-01.png"
+                                srcset="/img/icon-tmi-platform-ps-01@2x.png 2x,
+                                        /img/icon-tmi-platform-ps-01@3x.png 3x"
+                                class="Icon_tmi_platform_pc_01" />
+                                PS<span>100%</span>
                             </li>
+                        </ul>
+                        <ul class="kartselect">
                             <li>
-                                5
+                                <img class="kartimg" src="/img/image-tmi-kart-4.png" srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x" />
+                                백기사X
+                                <div class="sub">
+                                    <div class="first">
+                                        <img src="/img/icon-time-14.svg" alt="time" />
+                                        60’60’91
+                                        <img src="/img/icon-raceflag-14.svg" alt="raceflag" />
+                                        100%
+                                    </div>
+                                    <div class="second">
+                                        <img src="/img/icon-handle-14.svg" alt="handle"/>
+                                        999,999
+                                        <img src="/img/icon-crying-14.svg" alt="retire" />
+                                        100%
+                                    </div>
+                                </div>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 

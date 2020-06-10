@@ -11,7 +11,6 @@
 
   header {
     padding-top: 6px;
-    min-width: 375px;
     height: 60px;  
     background-color: #fff;
     .contents {    
@@ -64,6 +63,36 @@
           }
         }
       }
+      .menu-right {
+        line-height: 30px;
+        right: 42px;
+        .homepage{
+          display: inline-block;
+          height: 30px;
+          span{
+            margin-right: 5px;
+            font-family: Rajdhani;
+            font-size: 16px;
+            font-weight: 500;
+            color: #000;
+            vertical-align: middle;
+          }
+          .arrow{
+            position: relative;
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: #25bafe;
+            border-radius: 7px;
+            vertical-align: middle;
+            img{
+              position: absolute;
+              top: 3px;
+              left: 3px;
+            }
+          }
+        }
+      }
     }
   }
 
@@ -95,6 +124,10 @@
           margin-top: 28px;
           ul{
             li{
+              img{
+                width: 14px;
+                vertical-align: middle;
+              }
               span{
                 &.desktop {
                   display: inline;
@@ -220,6 +253,7 @@
                   img{
                     vertical-align: middle;
                     width: 30px;
+                    margin-right: 6px;
                   }
                   span {
                     margin-left: 6px;
@@ -248,7 +282,7 @@
                 }
                 .icons{
                   img{
-                    width: initial;
+                    width: 94px;
                   }
                   .desktop{
                     font-size: 1.8em;
