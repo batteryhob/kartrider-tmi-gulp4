@@ -38,6 +38,9 @@
             &.active{
               font-weight: bold;
             }
+            &.disable{
+              color: $color-coolgray;
+            }
             &:hover{
               font-weight: bold;
             }
@@ -98,6 +101,51 @@
 
 
   main {
+    .skeletion{
+      margin-bottom: 800px;
+      .shinny{    
+        &.info__text_one{
+          width: 80px;
+          height:20px;
+          border-radius:10px;
+        }
+        &.info__text_two{
+          margin-top: 10px;
+          width: 200px;
+          height: 50px;
+          border-radius:20px;       
+        }
+        &.info__text_three{
+          margin-top: 20px;
+          width: 160px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__text_four{
+          margin-top: 5px;
+          width: 120px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__text_five{
+          margin-top: 15px;
+          width: 200px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__thumbnail{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -150px;
+          margin-left: -150px;
+          width: 300px;
+          height: 300px;
+          border-radius: 150px;
+        }
+      }
+    }
+
     .title {
       height: calc(306px - 60px);
       .name {     
@@ -133,7 +181,21 @@
                   display: inline;
                 }
                 // svg 크기 고려
-              }              
+              }
+              .types{
+                margin-top: 20px;
+                border-radius: 10px;
+                .type{
+                  text-align: center;
+                  img{
+                    width: 30px;
+                  }
+                  p{
+                    margin-top: 5px;
+                    font-size: 12px;
+                  }
+                }                
+              }   
             }
           }
         }
@@ -342,6 +404,11 @@
                   margin-top: 0px;
                   line-height: 27px;
                   text-align: right;
+                }
+              }
+              .chart{
+                .chart-container{
+                  height: 182px;
                 }
               }
             }
@@ -588,6 +655,13 @@
           }
         }
       }
+    }
+  }
+
+  .raise-cover{
+    display: none;
+    &.active{
+      display: none;
     }
   }
 

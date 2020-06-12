@@ -1,6 +1,7 @@
 /* app.sass */
 @import '../common/_reset';
 @import '../common/_fonts';
+@import '../common/_common';
 
 @import '../sprite/css/svg';
 
@@ -218,10 +219,11 @@ html {
       }
     }
     section {
-      position: relative;
+      position: relative;      
       padding: 0px 27px;
       padding-top: calc(257px - 60px);
       padding-bottom: 300px;
+      min-width: 320px;
       transition: all .3s ease-in;
       text-align: center;
       .search{
@@ -357,8 +359,7 @@ html {
               display: flex;
               height: 24px;
               .select {
-                position: relative;
-                -webkit-transition: opacity 0.5s; /* Safari */
+                position: relative;                
                 transition: opacity 0.5s;
                 @mixin selectstyle {
                   width: 47px;
@@ -394,8 +395,6 @@ html {
                   border: 0;
                   opacity: 0;  /* 숨기기 */
                   filter:alpha(opacity=0);  /* IE8 숨기기 */
-                  -webkit-appearance: none; /* 네이티브 외형 감추기 */
-                  -moz-appearance: none;
                   appearance: none;
                 }
               }
@@ -441,6 +440,7 @@ html {
   }
 
   footer {
+    min-width: 320px;
     position: relative;
     z-index: 2;
     .wrapper {

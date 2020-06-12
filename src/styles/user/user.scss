@@ -1,6 +1,7 @@
 /* app.sass */
 @import '../common/_reset';
 @import '../common/_fonts';
+@import '../common/_common';
 
 @import '../sprite/css/svg';
 
@@ -62,7 +63,7 @@ html {
     position: fixed;
     width: 100%;
     top: 0px;
-    z-index: 9;  
+    z-index: 7;  
     background-color: #fff;
     transition: transform .3s ease-in-out;
     transform: translate(0px, -60px);
@@ -98,12 +99,89 @@ html {
   }
 
   main {
+    .skeletion{
+      @extend .title;
+      margin-bottom: 500px;
+      .shinny{
+        background-color: #f0f0f0;
+        position:relative;
+        overflow:hidden;          
+        &.info__text_one{
+          width: 40px;
+          height:20px;
+          border-radius:10px;
+        }
+        &.info__text_two{
+          margin-top: 10px;
+          width: 130px;
+          height:20px;
+          border-radius:10px;       
+        }
+        &.info__text_three{
+          margin-top: 20px;
+          width: 100px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__text_four{
+          margin-top: 5px;
+          width: 70px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__text_five{
+          margin-top: 15px;
+          width: 140px;
+          height:15px;
+          border-radius:10px;
+        }
+        &.info__thumbnail{
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          margin-top: -50px;
+          margin-left: -50px;
+          width: 100px;
+          height: 100px;
+          border-radius: 50px;
+        }
+      }
+      .shinny::before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        background:rgba(255,255,255,.4);
+        height:100%;
+        transform:skew(5deg);
+        animation:shine infinite 1.5s ease-in-out;
+      }
+      @keyframes shine {
+        from {
+        transform:skew(45deg) translateX(0%);
+        }        
+        to{
+          transform:skew(45deg) translateX(200%);
+        }
+      }
+    }
+
     .title{
       position: relative;
       min-width: 320px;
       height: calc(328px - 60px);
       background-color: #fff;
       transition: height .5s ease;
+      animation: showing 1s ease;
+      @keyframes showing {
+        from {
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
+      }
       .name {      
         margin: 0 auto;
         padding: 20px;
@@ -132,10 +210,11 @@ html {
           color: $color-darkgray;        
           font-weight: 400;
           ul{
+            position: relative;
             display: flex;
             height: 18px;
             line-height: 18px;
-            li{
+            li{              
               margin-right: 30px;
               cursor: pointer;
               span {
@@ -145,6 +224,33 @@ html {
               }
               &:last-child{
                 margin-right: 0px;
+              }
+              .types{
+                position: absolute;
+                display: flex;
+                padding: 0px 0px 0px 0px;
+                border-radius: 10px;
+                margin-top: 10px;
+                opacity: 0;
+                transition: all .3s ease-in;
+                .type{
+                  text-align: left;
+                  margin-right: 0px;
+                  transition: all .3s ease-in;
+                  img{
+                    width: 25px;
+                  }
+                  p{
+                    margin-top: 5px;
+                    font-size: 13px;
+                  }
+                }
+                &.active{
+                  opacity: 1;
+                  .type{
+                    margin-right: 18px;
+                  }
+                }
               }
             }
           }
@@ -163,8 +269,6 @@ html {
         border-image-slice: 1;
         background-image: linear-gradient(118deg, #f4fcff 13%, #f8fdfb 76%, #fffff8 87%);
         transition: right .5s ease;
-        -webkit-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
-        -moz-box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
         box-shadow: 7px 7px 5px 0px rgba(0,0,0,0.1);
         .profile{
           position: absolute;
@@ -188,6 +292,16 @@ html {
       margin-top: 104px;
       min-width: 320px;
       transition: margin-top .5s ease;
+      opacity: 1;
+      animation: showing 1s ease;
+      @keyframes showing {
+        from {
+          opacity: 0;
+        }
+        to{
+          opacity: 1;
+        }
+      }
       .mode {
         position: absolute;
         top: calc(-29px - 18px);
@@ -346,7 +460,7 @@ html {
           flex-wrap: wrap;
           .left {
             width: 100%;
-            height: 100%;
+            box-sizing: border-box;
             padding: 34px 24px 40px 24px;
             border-radius: 10px;
             background-color: #fff;
@@ -411,7 +525,7 @@ html {
           }
           .right {
             width: 100%;
-            height: 100%;
+            box-sizing: border-box;
             padding: 34px 24px 40px 24px;
             border-radius: 10px;
             background-color: #fff;
@@ -443,6 +557,14 @@ html {
                       color: $color-skyblue;
                     }
                   }  
+                }
+              }
+              .chart{
+                margin-top: 30px;
+                .chart-container{
+                  position: relative;
+                  margin: auto;
+                  height: 245px;
                 }
               }
             }
@@ -821,6 +943,7 @@ html {
   }
 
   footer {
+    min-width: 320px;
     margin-top: 41px;
     text-align: center;
     .logos{
@@ -858,105 +981,111 @@ html {
 
   .raise {
     position: fixed;
+    width: 100%;
+    left: 0px;
+    bottom: 0px;
+    padding: 52px 24px 45px 24px;
+    box-sizing: border-box;
+    border-radius: 24px 24px 0px 0px;
+    background-color: #fff;
+    transition: transform .5s ease-in-out;
+    transform: translate(0px, 100%);
+    z-index: 9;
+    .bar {
+      position: absolute; 
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 36px;
+      height: 5px;
+      border-radius: 3px;
+      background-color: #eaecef;
+    }
+    .close{
+      position: absolute; 
+      top: 28px;
+      right: 24px;
+      font-size: 20px;
+      cursor: pointer;
+    }
+    .top {
+      font-size: 1.8em;
+    }
+    ul{
+      &.platform{
+        margin-top: 30px;
+        font-size: 1.6em;
+        max-height: 318px;
+        overflow-y: scroll;
+        li{
+          position: relative;
+          height: 38px;
+          line-height: 38px;
+          margin-bottom: 20px;
+          img{
+            vertical-align: middle;
+            margin-right: 12px;
+          }
+          span{
+            position: absolute;
+            top: 0px;
+            right: 24px;
+            color: $color-skyblue;
+          }
+        }
+      }
+      &.kartselect{
+        margin-top: 30px;
+        font-size: 1.6em;
+        max-height: 318px;
+        overflow-y: scroll;
+        li{
+          position: relative;
+          height: 41px;
+          line-height: 41px;
+          padding-top: 30px;
+          padding-bottom: 35px;
+          border-bottom: 1px solid #f1f1f1;
+          &:last-child{
+            border-bottom: none;
+          }
+          &:hover{
+            background-color: $color-lightgray;
+          }
+          .kartimg{
+            vertical-align: middle;
+            margin-right: 12px;
+          }
+          .sub{
+            position: absolute;
+            top: 10px;
+            right: 0px;
+            display: inline-block;
+            font-size: 14px;
+            color: $color-darkgray;
+            img{
+              margin-left: 10px;
+              margin-right: 5px;
+            }
+          }
+        }
+      }
+    }    
+    &.active{
+      transform: translate(0px, 0px);
+    }
+  }
+  .raise-cover{
+    position: fixed;
+    display: none;
     top: 0px;
     left: 0px;
     width: 100%;
     height: 100%;    
     background-color: rgba(0,0,0,0.3);
-    transition: transform .5s ease-in-out;
-    transform: translate(0px, 100%);
-    z-index: 9;
-    .wrapper{
-      position: absolute;
-      width: 100%;
-      bottom: 0px;
-      padding: 52px 24px 45px 24px;
-      box-sizing: border-box;
-      border-radius: 24px 24px 0px 0px;
-      background-color: #fff;
-      .bar {
-        position: absolute; 
-        top: 8px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 36px;
-        height: 5px;
-        border-radius: 3px;
-        background-color: #eaecef;
-      }
-      .close{
-        position: absolute; 
-        top: 28px;
-        right: 24px;
-        font-size: 20px;
-        cursor: pointer;
-      }
-      .top {
-        font-size: 1.8em;
-      }
-      ul{
-        &.platform{
-          margin-top: 30px;
-          font-size: 1.6em;
-          max-height: 318px;
-          overflow-y: scroll;
-          li{
-            position: relative;
-            height: 38px;
-            line-height: 38px;
-            margin-bottom: 20px;
-            img{
-              vertical-align: middle;
-              margin-right: 12px;
-            }
-            span{
-              position: absolute;
-              top: 0px;
-              right: 24px;
-              color: $color-skyblue;
-            }
-          }
-        }
-        &.kartselect{
-          margin-top: 30px;
-          font-size: 1.6em;
-          max-height: 318px;
-          overflow-y: scroll;
-          li{
-            position: relative;
-            height: 41px;
-            line-height: 41px;
-            padding-top: 30px;
-            padding-bottom: 35px;
-            border-bottom: 1px solid #f1f1f1;
-            &:last-child{
-              border-bottom: none;
-            }
-            &:hover{
-              background-color: $color-lightgray;
-            }
-            .kartimg{
-              vertical-align: middle;
-              margin-right: 12px;
-            }
-            .sub{
-              position: absolute;
-              top: 10px;
-              right: 0px;
-              display: inline-block;
-              font-size: 14px;
-              color: $color-darkgray;
-              img{
-                margin-left: 10px;
-                margin-right: 5px;
-              }
-            }
-          }
-        }
-      }
-    }
+    z-index: 8;
     &.active{
-      transform: translate(0px, 0px);
+      display: block;
     }
   }
 

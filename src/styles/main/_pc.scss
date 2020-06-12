@@ -39,6 +39,9 @@
             &.active{
               font-weight: bold;
             }
+            &.disable{
+              color: $color-coolgray;
+            }
             &:hover{
               font-weight: bold;
             }

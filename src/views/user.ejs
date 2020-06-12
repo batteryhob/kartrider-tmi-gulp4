@@ -17,10 +17,6 @@
         var strokeDashOffsetValue = 100 - (percentageComplete * 100);
         var progressBar = $(".js-progress-bar");
         progressBar.css("stroke-dashoffset", strokeDashOffsetValue);
-
-        window.addEventListener("scroll",(e)=>{
-            console.log(e)
-        }, false)
     </script>
     <style>
         .svg-icon {
@@ -43,13 +39,13 @@
                             <li class="active">
                                 검색
                             </li>
-                            <li>
+                            <li class="disable">
                                 랭킹
                             </li>
-                            <li>
+                            <li class="disable">
                                 카트
                             </li>
-                            <li>
+                            <li class="disable">
                                 트랙
                             </li>
                         </ul>
@@ -86,6 +82,25 @@
             </div>       
         
             <main>
+                <!-- <div class="skeletion">
+                    <div class="name">
+                        <div class="lv">
+                            <p class="shinny info__text_one"></p>
+                            <p class="shinny info__text_two"></p>
+                        </div>
+                        <div class="sub">                            
+                            <p class="shinny info__text_three"></p>
+                            <p class="shinny info__text_four"></p>                  
+                        </div>
+                        <div class="share">
+                            <p class="shinny info__text_five"></p>           
+                        </div>
+                    </div>
+                    <div class="thumbnail">
+                        <p class="shinny info__thumbnail"></p>  
+                    </div>
+                </div> -->
+
                 <div class="title">
                     <div class="name">
                         <div class="lv">
@@ -109,6 +124,20 @@
                                 <li>
                                     <img src="/img/icon-share-14.svg" alt="share"/>
                                     <span class="desktop">공유하기</span>
+                                    <div class="types">
+                                        <div class="type">
+                                            <img src="/img/icon_fb.svg" alt="fb"/>
+                                            <p class="desktop">페이스북</p>
+                                        </div>
+                                        <div class="type">
+                                            <img src="/img/icon_kakao.svg" alt="kakao"/>
+                                            <p class="desktop">카카오</p>
+                                        </div>
+                                        <div class="type">
+                                            <img src="/img/icon_url.svg" alt="url"/>
+                                            <p class="desktop">URL복사</p>
+                                        </div>
+                                    </div>
                                 </li>
                                 <li>
                                     <img src="/img/icon-important-ver-2-14.svg" alt="report"/>
@@ -365,7 +394,9 @@
                                         </div>
                                     </div>
                                     <div class="chart">
-        
+                                        <div class="chart-container">
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -592,64 +623,80 @@
                 </div>
             </footer>
         
+            
             <div class="raise mobile">
-                <div class="wrapper">
-                    <div class="bar"></div>
-                    <img src="/img/icon-close-16.svg" class="close">
-                    <div class="top">
-                        카트 선택.
-                    </div>
-                    <div>
-                        <ul class="platform">
-                            <li>
-                                <img src="/img/icon-tmi-platform-pc-01.png"
-                                srcset="/img/icon-tmi-platform-pc-01@2x.png 2x,
-                                        /img/icon-tmi-platform-pc-01@3x.png 3x"
-                                class="Icon_tmi_platform_pc_01" />
-                                PC<span>100%</span>
-                            </li>
-                            <li>
-                                <img src="/img/icon-tmi-platform-xbox-01.png"
-                                srcset="/img/icon-tmi-platform-xbox-01@2x.png 2x,
-                                        /img/icon-tmi-platform-xbox-01@3x.png 3x"
-                                class="Icon_tmi_platform_pc_01" />
-                                XBOX<span>100%</span>
-                            </li>
-                            <li>
-                                <img src="/img/icon-tmi-platform-steam-01.png"
-                                srcset="/img/icon-tmi-platform-steam-01@2x.png 2x,
-                                        img/icon-tmi-platform-steam-01@3x.png 3x"
-                                class="/Icon_tmi_platform_pc_01" />
-                                Steam<span>100%</span>
-                            </li>
-                            <li>
-                                <img src="/img/icon-tmi-platform-ps-01.png"
-                                srcset="/img/icon-tmi-platform-ps-01@2x.png 2x,
-                                        /img/icon-tmi-platform-ps-01@3x.png 3x"
-                                class="Icon_tmi_platform_pc_01" />
-                                PS<span>100%</span>
-                            </li>
-                        </ul>
-                        <ul class="kartselect">
-                            <li>
-                                <img class="kartimg" src="/img/image-tmi-kart-4.png" srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x" />
-                                백기사X
-                                <div class="sub">
-                                    <div class="first">
-                                        <img src="/img/icon-time-14.svg" alt="time" />
-                                        60’60’91
-                                        <img src="/img/icon-raceflag-14.svg" alt="raceflag" />
-                                        100%
-                                    </div>
-                                    <div class="second">
-                                        <img src="/img/icon-handle-14.svg" alt="handle"/>
-                                        999,999
-                                        <img src="/img/icon-crying-14.svg" alt="retire" />
-                                        100%
-                                    </div>
+                <div class="bar"></div>
+                <img src="/img/icon-close-16.svg" class="close">
+                <div class="top">
+                    카트 선택.
+                </div>
+                <div>
+                    <ul class="platform">
+                        <li>
+                            <img src="/img/icon-tmi-platform-pc-01.png"
+                            srcset="/img/icon-tmi-platform-pc-01@2x.png 2x,
+                                    /img/icon-tmi-platform-pc-01@3x.png 3x"
+                            class="Icon_tmi_platform_pc_01" />
+                            PC<span>100%</span>
+                        </li>
+                        <li>
+                            <img src="/img/icon-tmi-platform-xbox-01.png"
+                            srcset="/img/icon-tmi-platform-xbox-01@2x.png 2x,
+                                    /img/icon-tmi-platform-xbox-01@3x.png 3x"
+                            class="Icon_tmi_platform_pc_01" />
+                            XBOX<span>100%</span>
+                        </li>
+                        <li>
+                            <img src="/img/icon-tmi-platform-steam-01.png"
+                            srcset="/img/icon-tmi-platform-steam-01@2x.png 2x,
+                                    img/icon-tmi-platform-steam-01@3x.png 3x"
+                            class="/Icon_tmi_platform_pc_01" />
+                            Steam<span>100%</span>
+                        </li>
+                        <li>
+                            <img src="/img/icon-tmi-platform-ps-01.png"
+                            srcset="/img/icon-tmi-platform-ps-01@2x.png 2x,
+                                    /img/icon-tmi-platform-ps-01@3x.png 3x"
+                            class="Icon_tmi_platform_pc_01" />
+                            PS<span>100%</span>
+                        </li>
+                    </ul>
+                    <ul class="kartselect">
+                        <li>
+                            <img class="kartimg" src="/img/image-tmi-kart-4.png" srcset="/img/image-tmi-kart-4@2x.png 2x, /img/image-tmi-kart-4@3x.png 3x" />
+                            백기사X
+                            <div class="sub">
+                                <div class="first">
+                                    <img src="/img/icon-time-14.svg" alt="time" />
+                                    60’60’91
+                                    <img src="/img/icon-raceflag-14.svg" alt="raceflag" />
+                                    100%
                                 </div>
-                            </li>
-                        </ul>
+                                <div class="second">
+                                    <img src="/img/icon-handle-14.svg" alt="handle"/>
+                                    999,999
+                                    <img src="/img/icon-crying-14.svg" alt="retire" />
+                                    100%
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="raise-cover mobile"></div>
+
+            <div id="popup" style="display: none;">
+                <div class="wrapper">
+                    <div class="contents">
+                        <div class="top">
+                            알림.
+                        </div>
+                        <div class="message">
+                            접속이 원활하지 않습니다.
+                        </div>
+                        <div class="btns">
+                            <button><img src="/img/icon-close-16.svg" class="close"></button>
+                        </div>
                     </div>
                 </div>
             </div>
